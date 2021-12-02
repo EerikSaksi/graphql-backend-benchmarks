@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-
 set -e
 
 SCRIPT_DIR=$(dirname "$0")
