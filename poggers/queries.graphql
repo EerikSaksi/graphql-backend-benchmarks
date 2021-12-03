@@ -1,0 +1,45 @@
+query albums_tracks_genre_all {
+  albums {
+    id
+    title
+    tracksByAlbumId {
+      id
+      name
+      genresByGenreId {
+        name
+      }
+    }
+  }
+}
+
+query albums_tracks_genre_some {
+  albums(where: { artistId: 127 }) {
+    id
+    title
+    tracksByAlbumId {
+      id
+      name
+      genresByGenreId {
+        name
+      }
+    }
+  }
+}
+
+query tracks_media_all {
+  tracks {
+    id
+    name
+    mediaTypeByMediaTypeId {
+      name
+    }
+  }
+}
+
+
+query artistByArtistId {
+  artists(where: { id: 3 }) {
+    id
+    name
+  }
+}

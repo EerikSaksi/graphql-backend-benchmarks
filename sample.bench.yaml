@@ -13,6 +13,11 @@
     url: http://172.17.0.1:7080/v1alpha1/graphql
     queries_file: hasura/queries.graphql
 
+  - &poggers
+    name: poggers
+    url: http://127.0.0.1:8080/graphql
+    queries_file: poggers/graphql
+
   - &prisma-mysql
     name: prisma-mysql
     url: http://172.17.0.1:4466
