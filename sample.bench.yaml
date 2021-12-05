@@ -15,8 +15,8 @@
 
   - &poggers
     name: poggers
-    url: http://127.0.0.1:8080/graphql
-    queries_file: poggers/graphql
+    url: http://172.17.0.1:8080/graphql 
+    queries_file: poggers/queries.graphql
 
   - &prisma-mysql
     name: prisma-mysql
@@ -61,7 +61,7 @@
 - <<: *default_bench
   name: artists_collaboration
   candidates:
-  - <<: *hasura
+  - <<: *poggers
   - <<: *prisma-mysql
   # - <<: *prisma-pg
   rps: *rps_200_1000

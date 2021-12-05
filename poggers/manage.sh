@@ -10,7 +10,7 @@ usage() {
 
 init() {
     N_CPUS=$(nproc --all)
-		docker build git@github.com:EerikSaksi/poggers.git#main: -t poggers
+		docker build git@github.com:EerikSaksi/poggers.git\#main: -t poggers
 }
 
 if [ "$#" -ne 1 ]; then
