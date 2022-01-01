@@ -1,0 +1,82 @@
+url: 'http://127.0.0.1:5000/graphql'
+headers:
+  Content-Type: 'application/json' 
+queries:
+  - name: AlbumsTracksGenreAll
+    tools: [k6]
+    execution_strategy: MAX_REQUESTS_IN_DURATION
+    connections: 50
+    duration: 60s
+    query: |
+      query {
+        allAlbums {
+          nodes {
+            id
+            title
+            tracksByAlbumId {
+              nodes {
+                id
+                name
+                genreByGenreId {
+                  name
+                }
+              }
+            }
+          }
+        }
+      }
+  - name: AlbumsTracksGenreSome
+    tools: [k6]
+    execution_strategy: MAX_REQUESTS_IN_DURATION
+    connections: 50
+    duration: 60s
+    query: |
+      query albums_tracks_genre_some {
+        allAlbums(condition: {artistId: 127}) {
+          nodes {
+            id
+            title
+            tracksByAlbumId {
+              nodes {
+                id
+                name
+                genreByGenreId {
+                  name
+                }
+              }
+            }
+          }
+        }
+      }
+
+  - name: TracksMediaAll
+    tools: [k6]
+    execution_strategy: MAX_REQUESTS_IN_DURATION
+    connections: 50
+    duration: 60s
+    query: |
+      query tracks_media_all {
+        allTracks {
+          nodes {
+            id
+            name
+            mediaTypeByMediaTypeId {
+              name
+            }
+          }
+        }
+      }
+  - name: ArtistByArtistId
+    tools: [k6]
+    execution_strategy: MAX_REQUESTS_IN_DURATION
+    connections: 50
+    duration: 60s
+    query: |
+      query artistByArtistId {
+        allArtists(condition: {id: 3}) {
+          nodes {
+            id
+            name
+          }
+        }
+      }

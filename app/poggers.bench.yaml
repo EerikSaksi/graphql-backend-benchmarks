@@ -1,0 +1,61 @@
+url: 'http://localhost:8080/graphql'
+queries:
+    # Name: Unique name for the query
+  - name: SearchAlbumsWithArtist
+    # Tools: List of benchmarking tools to run: ['autocannon', 'k6', 'wrk2']
+    tools: [autocannon, k6]
+    execution_strategy: REQUESTS_PER_SECOND
+    rps: 2000
+    duration: 10s
+    connections: 50
+    query: |
+      query albums_tracks_genre_all {
+        albums {
+          id
+          title
+          tracksByAlbumId {
+            id
+            name
+            genreByGenreId {
+              name
+            }
+          }
+        }
+      }
+  - name: AlbumByPK
+    tools: [autocannon, k6]
+    execution_strategy: FIXED_REQUEST_NUMBER
+    requests: 10000
+    query: |
+      query albums_tracks_genre_some {
+        albums(where: { artistId: 127 }) {
+          id
+          title
+          tracksByAlbumId {
+            id
+            name
+            genreByGenreId {
+              name
+            }
+          }
+        }
+      }
+  - name: AlbumByPKMultiStage
+    tools: [k6]
+    execution_strategy: MULTI_STAGE
+    initial_rps: 0
+    stages:
+      - duration: 5s
+        target: 100
+      - duration: 5s
+        target: 1000
+    query: |
+      query tracks_media_all {
+        tracks {
+          id
+          name
+          mediaTypeByMediaTypeId {
+            name
+          }
+        }
+      }
