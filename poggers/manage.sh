@@ -10,8 +10,10 @@ usage() {
 
 init() {
     N_CPUS=$(nproc --all)
-		docker build git@github.com:EerikSaksi/poggers.git\#main: -t poggers
+		docker build -t poggers git@github.com:EerikSaksi/poggers.git\#main: 
+		docker run -d --name poggers-chinook -p 8080:8080 -e SERVER_ADDR=0.0.0.0:8080 -e PG.USER=admin -e PG.HOST=172.17.0.1 -e PG.PORT=7432 -e PG.DBNAME=chinook -e PG.POOL.MAX_SIZE=100 poggers 
 }
+
 
 if [ "$#" -ne 1 ]; then
     usage
@@ -25,16 +27,16 @@ case $1 in
         ;;
     start)
         docker start postgres-chinook 
-        docker start poggers
+				docker start poggers-chinook
         exit
         ;;
     stop)
-        docker stop postgraphile-chinook
+        docker stop poggers-chinook
         exit
         ;;
     nuke)
-        docker stop postgraphile-chinook
-        docker rm poggers
+        docker stop poggers-chinook
+        docker rm poggers-chinook
         exit
         ;;
     *)

@@ -58,8 +58,6 @@ start () {
 stop () {
     echo 'stopping raven-chinook container'
     docker stop raven-chinook
-    echo 'stopping postgres-chinook container'
-    docker stop postgres-chinook
 }
 
 nuke () {
