@@ -9,9 +9,8 @@ usage() {
 }
 
 init() {
-    N_CPUS=$(nproc --all)
 		docker build -t poggers git@github.com:EerikSaksi/poggers.git\#main: 
-		docker run -d --name poggers-chinook -p 8080:8080 -e SERVER_ADDR=0.0.0.0:8080 -e PG.USER=admin -e PG.HOST=172.17.0.1 -e PG.PORT=7432 -e PG.DBNAME=chinook -e PG.POOL.MAX_SIZE=100 poggers 
+		docker run --rm --name postgraphile-ssl-chinook -p 5000:5000  -e DATABASE_URL=$DATABASE_URL -e PORT=5000  postgraphile_ssl
 }
 
 
@@ -26,7 +25,6 @@ case $1 in
         exit
         ;;
     start)
-        docker start postgres-chinook 
 				docker start poggers-chinook
         exit
         ;;

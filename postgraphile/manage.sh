@@ -9,8 +9,8 @@ usage() {
 
 init() {
     N_CPUS=$(nproc --all)
-    docker build --no-cache -t "hasura/postgraphile:latest" "$SCRIPT_DIR"
-    docker run --name postgraphile-chinook -p 5000:5000 -d hasura/postgraphile:latest postgraphile -c 'postgres://admin@172.17.0.1:7432/chinook' --host 0.0.0.0 --max-pool-size 100 --cluster-workers "$n_cpus"
+    docker build --no-cache -t postgraphile_ssl "${SCRIPT_DIR}/postgraphile_ssl"
+		docker run --name postgraphile-ssl-chinook -d -p 5000:5000 -e DATABASE_URL=$DATABASE_URL -e PORT=5000 postgraphile_ssl
 }
 
 if [ "$#" -ne 1 ]; then
@@ -24,17 +24,16 @@ case $1 in
         exit
         ;;
     start)
-        docker start postgres-chinook
-        docker start postgraphile-chinook
+        docker start postgraphile-ssl-chinook
         exit
         ;;
     stop)
-        docker stop postgraphile-chinook
+        docker stop postgraphile-ssl-chinook
         exit
         ;;
     nuke)
-        docker stop postgraphile-chinook
-        docker rm postgraphile-chinook
+        docker stop postgraphile-ssl-chinook
+        docker rm postgraphile-ssl-chinook
         exit
         ;;
     *)

@@ -61,12 +61,7 @@ stop () {
 }
 
 nuke () {
-    echo 'removing raven-chinook container'
     docker stop raven-chinook && docker rm raven-chinook
-    echo 'removing postgres-chinook container'
-    docker stop postgres-chinook && docker rm postgres-chinook
-    echo 'removing postgres-chinook volume'
-    docker volume rm postgres-chinook
 }
 
 if [ "$#" -ne 1 ]; then
