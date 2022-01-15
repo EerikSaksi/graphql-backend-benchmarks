@@ -1,0 +1,5432 @@
+"""The root query type which gives access points into the data universe."""
+type Query implements Node {
+  """
+  Exposes the root query type nested one level down. This is helpful for Relay 1
+  which can only query top level fields if they are in a particular form.
+  """
+  query: Query!
+
+  """
+  The root query type must be a `Node` to work well with Relay 1 mutations. This just resolves to `query`.
+  """
+  nodeId: ID!
+
+  """Fetches an object given its globally unique `ID`."""
+  node(
+    """The globally unique `ID`."""
+    nodeId: ID!
+  ): Node
+
+  """Reads and enables pagination through a set of `Actor`."""
+  allActors(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Actor`."""
+    orderBy: [ActorsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: ActorCondition
+  ): ActorsConnection
+
+  """Reads and enables pagination through a set of `Album`."""
+  allAlbums(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Album`."""
+    orderBy: [AlbumsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: AlbumCondition
+  ): AlbumsConnection
+
+  """Reads and enables pagination through a set of `Artist`."""
+  allArtists(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Artist`."""
+    orderBy: [ArtistsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: ArtistCondition
+  ): ArtistsConnection
+
+  """Reads and enables pagination through a set of `Category`."""
+  allCategories(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Category`."""
+    orderBy: [CategoriesOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: CategoryCondition
+  ): CategoriesConnection
+
+  """Reads and enables pagination through a set of `Customer`."""
+  allCustomers(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Customer`."""
+    orderBy: [CustomersOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: CustomerCondition
+  ): CustomersConnection
+
+  """Reads and enables pagination through a set of `Employee`."""
+  allEmployees(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Employee`."""
+    orderBy: [EmployeesOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: EmployeeCondition
+  ): EmployeesConnection
+
+  """Reads and enables pagination through a set of `FilmActor`."""
+  allFilmActors(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `FilmActor`."""
+    orderBy: [FilmActorsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: FilmActorCondition
+  ): FilmActorsConnection
+
+  """Reads and enables pagination through a set of `FilmCategory`."""
+  allFilmCategories(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `FilmCategory`."""
+    orderBy: [FilmCategoriesOrderBy!] = [NATURAL]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: FilmCategoryCondition
+  ): FilmCategoriesConnection
+
+  """Reads and enables pagination through a set of `Film`."""
+  allFilms(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Film`."""
+    orderBy: [FilmsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: FilmCondition
+  ): FilmsConnection
+
+  """Reads and enables pagination through a set of `Genre`."""
+  allGenres(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Genre`."""
+    orderBy: [GenresOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: GenreCondition
+  ): GenresConnection
+
+  """Reads and enables pagination through a set of `InvoiceLine`."""
+  allInvoiceLines(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `InvoiceLine`."""
+    orderBy: [InvoiceLinesOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: InvoiceLineCondition
+  ): InvoiceLinesConnection
+
+  """Reads and enables pagination through a set of `Invoice`."""
+  allInvoices(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Invoice`."""
+    orderBy: [InvoicesOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: InvoiceCondition
+  ): InvoicesConnection
+
+  """Reads and enables pagination through a set of `MediaType`."""
+  allMediaTypes(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MediaType`."""
+    orderBy: [MediaTypesOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MediaTypeCondition
+  ): MediaTypesConnection
+
+  """Reads and enables pagination through a set of `PlaylistTrack`."""
+  allPlaylistTracks(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `PlaylistTrack`."""
+    orderBy: [PlaylistTracksOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: PlaylistTrackCondition
+  ): PlaylistTracksConnection
+
+  """Reads and enables pagination through a set of `Playlist`."""
+  allPlaylists(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Playlist`."""
+    orderBy: [PlaylistsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: PlaylistCondition
+  ): PlaylistsConnection
+
+  """Reads and enables pagination through a set of `Track`."""
+  allTracks(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Track`."""
+    orderBy: [TracksOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: TrackCondition
+  ): TracksConnection
+  actorById(id: Int!): Actor
+  albumById(id: Int!): Album
+  artistById(id: Int!): Artist
+  categoryById(id: Int!): Category
+  customerById(id: Int!): Customer
+  employeeById(id: Int!): Employee
+  filmActorByActorIdAndFilmId(actorId: Int!, filmId: Int!): FilmActor
+  filmById(id: Int!): Film
+  genreById(id: Int!): Genre
+  invoiceLineById(id: Int!): InvoiceLine
+  invoiceById(id: Int!): Invoice
+  mediaTypeById(id: Int!): MediaType
+  playlistTrackByPlaylistIdAndTrackId(playlistId: Int!, trackId: Int!): PlaylistTrack
+  playlistById(id: Int!): Playlist
+  trackById(id: Int!): Track
+
+  """Reads a single `Actor` using its globally unique `ID`."""
+  actor(
+    """The globally unique `ID` to be used in selecting a single `Actor`."""
+    nodeId: ID!
+  ): Actor
+
+  """Reads a single `Album` using its globally unique `ID`."""
+  album(
+    """The globally unique `ID` to be used in selecting a single `Album`."""
+    nodeId: ID!
+  ): Album
+
+  """Reads a single `Artist` using its globally unique `ID`."""
+  artist(
+    """The globally unique `ID` to be used in selecting a single `Artist`."""
+    nodeId: ID!
+  ): Artist
+
+  """Reads a single `Category` using its globally unique `ID`."""
+  category(
+    """The globally unique `ID` to be used in selecting a single `Category`."""
+    nodeId: ID!
+  ): Category
+
+  """Reads a single `Customer` using its globally unique `ID`."""
+  customer(
+    """The globally unique `ID` to be used in selecting a single `Customer`."""
+    nodeId: ID!
+  ): Customer
+
+  """Reads a single `Employee` using its globally unique `ID`."""
+  employee(
+    """The globally unique `ID` to be used in selecting a single `Employee`."""
+    nodeId: ID!
+  ): Employee
+
+  """Reads a single `FilmActor` using its globally unique `ID`."""
+  filmActor(
+    """The globally unique `ID` to be used in selecting a single `FilmActor`."""
+    nodeId: ID!
+  ): FilmActor
+
+  """Reads a single `Film` using its globally unique `ID`."""
+  film(
+    """The globally unique `ID` to be used in selecting a single `Film`."""
+    nodeId: ID!
+  ): Film
+
+  """Reads a single `Genre` using its globally unique `ID`."""
+  genre(
+    """The globally unique `ID` to be used in selecting a single `Genre`."""
+    nodeId: ID!
+  ): Genre
+
+  """Reads a single `InvoiceLine` using its globally unique `ID`."""
+  invoiceLine(
+    """
+    The globally unique `ID` to be used in selecting a single `InvoiceLine`.
+    """
+    nodeId: ID!
+  ): InvoiceLine
+
+  """Reads a single `Invoice` using its globally unique `ID`."""
+  invoice(
+    """The globally unique `ID` to be used in selecting a single `Invoice`."""
+    nodeId: ID!
+  ): Invoice
+
+  """Reads a single `MediaType` using its globally unique `ID`."""
+  mediaType(
+    """The globally unique `ID` to be used in selecting a single `MediaType`."""
+    nodeId: ID!
+  ): MediaType
+
+  """Reads a single `PlaylistTrack` using its globally unique `ID`."""
+  playlistTrack(
+    """
+    The globally unique `ID` to be used in selecting a single `PlaylistTrack`.
+    """
+    nodeId: ID!
+  ): PlaylistTrack
+
+  """Reads a single `Playlist` using its globally unique `ID`."""
+  playlist(
+    """The globally unique `ID` to be used in selecting a single `Playlist`."""
+    nodeId: ID!
+  ): Playlist
+
+  """Reads a single `Track` using its globally unique `ID`."""
+  track(
+    """The globally unique `ID` to be used in selecting a single `Track`."""
+    nodeId: ID!
+  ): Track
+}
+
+"""An object with a globally unique `ID`."""
+interface Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+}
+
+"""A connection to a list of `Actor` values."""
+type ActorsConnection {
+  """A list of `Actor` objects."""
+  nodes: [Actor]!
+
+  """
+  A list of edges which contains the `Actor` and cursor to aid in pagination.
+  """
+  edges: [ActorsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Actor` you could get from the connection."""
+  totalCount: Int!
+}
+
+type Actor implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: Int!
+  firstName: String!
+  lastName: String!
+  lastUpdate: Datetime!
+}
+
+"""
+A point in time as described by the [ISO
+8601](https://en.wikipedia.org/wiki/ISO_8601) standard. May or may not include a timezone.
+"""
+scalar Datetime
+
+"""A `Actor` edge in the connection."""
+type ActorsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Actor` at the end of the edge."""
+  node: Actor
+}
+
+"""A location in a connection that can be used for resuming pagination."""
+scalar Cursor
+
+"""Information about pagination in a connection."""
+type PageInfo {
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+
+  """When paginating backwards, the cursor to continue."""
+  startCursor: Cursor
+
+  """When paginating forwards, the cursor to continue."""
+  endCursor: Cursor
+}
+
+"""Methods to use when ordering `Actor`."""
+enum ActorsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  FIRST_NAME_ASC
+  FIRST_NAME_DESC
+  LAST_NAME_ASC
+  LAST_NAME_DESC
+  LAST_UPDATE_ASC
+  LAST_UPDATE_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Actor` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input ActorCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `firstName` field."""
+  firstName: String
+
+  """Checks for equality with the object’s `lastName` field."""
+  lastName: String
+
+  """Checks for equality with the object’s `lastUpdate` field."""
+  lastUpdate: Datetime
+}
+
+"""A connection to a list of `Album` values."""
+type AlbumsConnection {
+  """A list of `Album` objects."""
+  nodes: [Album]!
+
+  """
+  A list of edges which contains the `Album` and cursor to aid in pagination.
+  """
+  edges: [AlbumsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Album` you could get from the connection."""
+  totalCount: Int!
+}
+
+type Album implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: Int!
+  title: String!
+  artistId: Int!
+
+  """Reads a single `Artist` that is related to this `Album`."""
+  artistByArtistId: Artist
+
+  """Reads and enables pagination through a set of `Track`."""
+  tracksByAlbumId(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Track`."""
+    orderBy: [TracksOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: TrackCondition
+  ): TracksConnection!
+}
+
+type Artist implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: Int!
+  name: String
+
+  """Reads and enables pagination through a set of `Album`."""
+  albumsByArtistId(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Album`."""
+    orderBy: [AlbumsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: AlbumCondition
+  ): AlbumsConnection!
+}
+
+"""Methods to use when ordering `Album`."""
+enum AlbumsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  TITLE_ASC
+  TITLE_DESC
+  ARTIST_ID_ASC
+  ARTIST_ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Album` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input AlbumCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `title` field."""
+  title: String
+
+  """Checks for equality with the object’s `artistId` field."""
+  artistId: Int
+}
+
+"""A connection to a list of `Track` values."""
+type TracksConnection {
+  """A list of `Track` objects."""
+  nodes: [Track]!
+
+  """
+  A list of edges which contains the `Track` and cursor to aid in pagination.
+  """
+  edges: [TracksEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Track` you could get from the connection."""
+  totalCount: Int!
+}
+
+type Track implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: Int!
+  name: String!
+  albumId: Int
+  mediaTypeId: Int!
+  genreId: Int
+  composer: String
+  milliseconds: Int!
+  bytes: Int
+  unitPrice: BigFloat!
+
+  """Reads a single `Album` that is related to this `Track`."""
+  albumByAlbumId: Album
+
+  """Reads a single `MediaType` that is related to this `Track`."""
+  mediaTypeByMediaTypeId: MediaType
+
+  """Reads a single `Genre` that is related to this `Track`."""
+  genreByGenreId: Genre
+
+  """Reads and enables pagination through a set of `InvoiceLine`."""
+  invoiceLinesByTrackId(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `InvoiceLine`."""
+    orderBy: [InvoiceLinesOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: InvoiceLineCondition
+  ): InvoiceLinesConnection!
+
+  """Reads and enables pagination through a set of `PlaylistTrack`."""
+  playlistTracksByTrackId(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `PlaylistTrack`."""
+    orderBy: [PlaylistTracksOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: PlaylistTrackCondition
+  ): PlaylistTracksConnection!
+}
+
+"""
+A floating point number that requires more precision than IEEE 754 binary 64
+"""
+scalar BigFloat
+
+type MediaType implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: Int!
+  name: String
+
+  """Reads and enables pagination through a set of `Track`."""
+  tracksByMediaTypeId(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Track`."""
+    orderBy: [TracksOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: TrackCondition
+  ): TracksConnection!
+}
+
+"""Methods to use when ordering `Track`."""
+enum TracksOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  NAME_ASC
+  NAME_DESC
+  ALBUM_ID_ASC
+  ALBUM_ID_DESC
+  MEDIA_TYPE_ID_ASC
+  MEDIA_TYPE_ID_DESC
+  GENRE_ID_ASC
+  GENRE_ID_DESC
+  COMPOSER_ASC
+  COMPOSER_DESC
+  MILLISECONDS_ASC
+  MILLISECONDS_DESC
+  BYTES_ASC
+  BYTES_DESC
+  UNIT_PRICE_ASC
+  UNIT_PRICE_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Track` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input TrackCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+
+  """Checks for equality with the object’s `albumId` field."""
+  albumId: Int
+
+  """Checks for equality with the object’s `mediaTypeId` field."""
+  mediaTypeId: Int
+
+  """Checks for equality with the object’s `genreId` field."""
+  genreId: Int
+
+  """Checks for equality with the object’s `composer` field."""
+  composer: String
+
+  """Checks for equality with the object’s `milliseconds` field."""
+  milliseconds: Int
+
+  """Checks for equality with the object’s `bytes` field."""
+  bytes: Int
+
+  """Checks for equality with the object’s `unitPrice` field."""
+  unitPrice: BigFloat
+}
+
+type Genre implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: Int!
+  name: String
+
+  """Reads and enables pagination through a set of `Track`."""
+  tracksByGenreId(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Track`."""
+    orderBy: [TracksOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: TrackCondition
+  ): TracksConnection!
+}
+
+"""A connection to a list of `InvoiceLine` values."""
+type InvoiceLinesConnection {
+  """A list of `InvoiceLine` objects."""
+  nodes: [InvoiceLine]!
+
+  """
+  A list of edges which contains the `InvoiceLine` and cursor to aid in pagination.
+  """
+  edges: [InvoiceLinesEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `InvoiceLine` you could get from the connection."""
+  totalCount: Int!
+}
+
+type InvoiceLine implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: Int!
+  invoiceId: Int!
+  trackId: Int!
+  unitPrice: BigFloat!
+  quantity: Int!
+
+  """Reads a single `Invoice` that is related to this `InvoiceLine`."""
+  invoiceByInvoiceId: Invoice
+
+  """Reads a single `Track` that is related to this `InvoiceLine`."""
+  trackByTrackId: Track
+}
+
+type Invoice implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: Int!
+  customerId: Int!
+  invoiceDate: Datetime!
+  billingAddress: String
+  billingCity: String
+  billingState: String
+  billingCountry: String
+  billingPostalCode: String
+  total: BigFloat!
+
+  """Reads a single `Customer` that is related to this `Invoice`."""
+  customerByCustomerId: Customer
+
+  """Reads and enables pagination through a set of `InvoiceLine`."""
+  invoiceLinesByInvoiceId(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `InvoiceLine`."""
+    orderBy: [InvoiceLinesOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: InvoiceLineCondition
+  ): InvoiceLinesConnection!
+}
+
+type Customer implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: Int!
+  firstName: String!
+  lastName: String!
+  company: String
+  address: String
+  city: String
+  state: String
+  country: String
+  postalCode: String
+  phone: String
+  fax: String
+  email: String!
+  supportRepId: Int
+
+  """Reads a single `Employee` that is related to this `Customer`."""
+  employeeBySupportRepId: Employee
+
+  """Reads and enables pagination through a set of `Invoice`."""
+  invoicesByCustomerId(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Invoice`."""
+    orderBy: [InvoicesOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: InvoiceCondition
+  ): InvoicesConnection!
+}
+
+type Employee implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: Int!
+  lastName: String!
+  firstName: String!
+  title: String
+  reportsTo: Int
+  birthDate: Datetime
+  hireDate: Datetime
+  address: String
+  city: String
+  state: String
+  country: String
+  postalCode: String
+  phone: String
+  fax: String
+  email: String
+
+  """Reads a single `Employee` that is related to this `Employee`."""
+  employeeByReportsTo: Employee
+
+  """Reads and enables pagination through a set of `Customer`."""
+  customersBySupportRepId(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Customer`."""
+    orderBy: [CustomersOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: CustomerCondition
+  ): CustomersConnection!
+
+  """Reads and enables pagination through a set of `Employee`."""
+  employeesByReportsTo(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Employee`."""
+    orderBy: [EmployeesOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: EmployeeCondition
+  ): EmployeesConnection!
+}
+
+"""A connection to a list of `Customer` values."""
+type CustomersConnection {
+  """A list of `Customer` objects."""
+  nodes: [Customer]!
+
+  """
+  A list of edges which contains the `Customer` and cursor to aid in pagination.
+  """
+  edges: [CustomersEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Customer` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `Customer` edge in the connection."""
+type CustomersEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Customer` at the end of the edge."""
+  node: Customer
+}
+
+"""Methods to use when ordering `Customer`."""
+enum CustomersOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  FIRST_NAME_ASC
+  FIRST_NAME_DESC
+  LAST_NAME_ASC
+  LAST_NAME_DESC
+  COMPANY_ASC
+  COMPANY_DESC
+  ADDRESS_ASC
+  ADDRESS_DESC
+  CITY_ASC
+  CITY_DESC
+  STATE_ASC
+  STATE_DESC
+  COUNTRY_ASC
+  COUNTRY_DESC
+  POSTAL_CODE_ASC
+  POSTAL_CODE_DESC
+  PHONE_ASC
+  PHONE_DESC
+  FAX_ASC
+  FAX_DESC
+  EMAIL_ASC
+  EMAIL_DESC
+  SUPPORT_REP_ID_ASC
+  SUPPORT_REP_ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Customer` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input CustomerCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `firstName` field."""
+  firstName: String
+
+  """Checks for equality with the object’s `lastName` field."""
+  lastName: String
+
+  """Checks for equality with the object’s `company` field."""
+  company: String
+
+  """Checks for equality with the object’s `address` field."""
+  address: String
+
+  """Checks for equality with the object’s `city` field."""
+  city: String
+
+  """Checks for equality with the object’s `state` field."""
+  state: String
+
+  """Checks for equality with the object’s `country` field."""
+  country: String
+
+  """Checks for equality with the object’s `postalCode` field."""
+  postalCode: String
+
+  """Checks for equality with the object’s `phone` field."""
+  phone: String
+
+  """Checks for equality with the object’s `fax` field."""
+  fax: String
+
+  """Checks for equality with the object’s `email` field."""
+  email: String
+
+  """Checks for equality with the object’s `supportRepId` field."""
+  supportRepId: Int
+}
+
+"""A connection to a list of `Employee` values."""
+type EmployeesConnection {
+  """A list of `Employee` objects."""
+  nodes: [Employee]!
+
+  """
+  A list of edges which contains the `Employee` and cursor to aid in pagination.
+  """
+  edges: [EmployeesEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Employee` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `Employee` edge in the connection."""
+type EmployeesEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Employee` at the end of the edge."""
+  node: Employee
+}
+
+"""Methods to use when ordering `Employee`."""
+enum EmployeesOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  LAST_NAME_ASC
+  LAST_NAME_DESC
+  FIRST_NAME_ASC
+  FIRST_NAME_DESC
+  TITLE_ASC
+  TITLE_DESC
+  REPORTS_TO_ASC
+  REPORTS_TO_DESC
+  BIRTH_DATE_ASC
+  BIRTH_DATE_DESC
+  HIRE_DATE_ASC
+  HIRE_DATE_DESC
+  ADDRESS_ASC
+  ADDRESS_DESC
+  CITY_ASC
+  CITY_DESC
+  STATE_ASC
+  STATE_DESC
+  COUNTRY_ASC
+  COUNTRY_DESC
+  POSTAL_CODE_ASC
+  POSTAL_CODE_DESC
+  PHONE_ASC
+  PHONE_DESC
+  FAX_ASC
+  FAX_DESC
+  EMAIL_ASC
+  EMAIL_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Employee` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input EmployeeCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `lastName` field."""
+  lastName: String
+
+  """Checks for equality with the object’s `firstName` field."""
+  firstName: String
+
+  """Checks for equality with the object’s `title` field."""
+  title: String
+
+  """Checks for equality with the object’s `reportsTo` field."""
+  reportsTo: Int
+
+  """Checks for equality with the object’s `birthDate` field."""
+  birthDate: Datetime
+
+  """Checks for equality with the object’s `hireDate` field."""
+  hireDate: Datetime
+
+  """Checks for equality with the object’s `address` field."""
+  address: String
+
+  """Checks for equality with the object’s `city` field."""
+  city: String
+
+  """Checks for equality with the object’s `state` field."""
+  state: String
+
+  """Checks for equality with the object’s `country` field."""
+  country: String
+
+  """Checks for equality with the object’s `postalCode` field."""
+  postalCode: String
+
+  """Checks for equality with the object’s `phone` field."""
+  phone: String
+
+  """Checks for equality with the object’s `fax` field."""
+  fax: String
+
+  """Checks for equality with the object’s `email` field."""
+  email: String
+}
+
+"""A connection to a list of `Invoice` values."""
+type InvoicesConnection {
+  """A list of `Invoice` objects."""
+  nodes: [Invoice]!
+
+  """
+  A list of edges which contains the `Invoice` and cursor to aid in pagination.
+  """
+  edges: [InvoicesEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Invoice` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `Invoice` edge in the connection."""
+type InvoicesEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Invoice` at the end of the edge."""
+  node: Invoice
+}
+
+"""Methods to use when ordering `Invoice`."""
+enum InvoicesOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  CUSTOMER_ID_ASC
+  CUSTOMER_ID_DESC
+  INVOICE_DATE_ASC
+  INVOICE_DATE_DESC
+  BILLING_ADDRESS_ASC
+  BILLING_ADDRESS_DESC
+  BILLING_CITY_ASC
+  BILLING_CITY_DESC
+  BILLING_STATE_ASC
+  BILLING_STATE_DESC
+  BILLING_COUNTRY_ASC
+  BILLING_COUNTRY_DESC
+  BILLING_POSTAL_CODE_ASC
+  BILLING_POSTAL_CODE_DESC
+  TOTAL_ASC
+  TOTAL_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Invoice` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input InvoiceCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `customerId` field."""
+  customerId: Int
+
+  """Checks for equality with the object’s `invoiceDate` field."""
+  invoiceDate: Datetime
+
+  """Checks for equality with the object’s `billingAddress` field."""
+  billingAddress: String
+
+  """Checks for equality with the object’s `billingCity` field."""
+  billingCity: String
+
+  """Checks for equality with the object’s `billingState` field."""
+  billingState: String
+
+  """Checks for equality with the object’s `billingCountry` field."""
+  billingCountry: String
+
+  """Checks for equality with the object’s `billingPostalCode` field."""
+  billingPostalCode: String
+
+  """Checks for equality with the object’s `total` field."""
+  total: BigFloat
+}
+
+"""Methods to use when ordering `InvoiceLine`."""
+enum InvoiceLinesOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  INVOICE_ID_ASC
+  INVOICE_ID_DESC
+  TRACK_ID_ASC
+  TRACK_ID_DESC
+  UNIT_PRICE_ASC
+  UNIT_PRICE_DESC
+  QUANTITY_ASC
+  QUANTITY_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `InvoiceLine` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input InvoiceLineCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `invoiceId` field."""
+  invoiceId: Int
+
+  """Checks for equality with the object’s `trackId` field."""
+  trackId: Int
+
+  """Checks for equality with the object’s `unitPrice` field."""
+  unitPrice: BigFloat
+
+  """Checks for equality with the object’s `quantity` field."""
+  quantity: Int
+}
+
+"""A `InvoiceLine` edge in the connection."""
+type InvoiceLinesEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `InvoiceLine` at the end of the edge."""
+  node: InvoiceLine
+}
+
+"""A connection to a list of `PlaylistTrack` values."""
+type PlaylistTracksConnection {
+  """A list of `PlaylistTrack` objects."""
+  nodes: [PlaylistTrack]!
+
+  """
+  A list of edges which contains the `PlaylistTrack` and cursor to aid in pagination.
+  """
+  edges: [PlaylistTracksEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `PlaylistTrack` you could get from the connection."""
+  totalCount: Int!
+}
+
+type PlaylistTrack implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  playlistId: Int!
+  trackId: Int!
+
+  """Reads a single `Playlist` that is related to this `PlaylistTrack`."""
+  playlistByPlaylistId: Playlist
+
+  """Reads a single `Track` that is related to this `PlaylistTrack`."""
+  trackByTrackId: Track
+}
+
+type Playlist implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: Int!
+  name: String
+
+  """Reads and enables pagination through a set of `PlaylistTrack`."""
+  playlistTracksByPlaylistId(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `PlaylistTrack`."""
+    orderBy: [PlaylistTracksOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: PlaylistTrackCondition
+  ): PlaylistTracksConnection!
+}
+
+"""Methods to use when ordering `PlaylistTrack`."""
+enum PlaylistTracksOrderBy {
+  NATURAL
+  PLAYLIST_ID_ASC
+  PLAYLIST_ID_DESC
+  TRACK_ID_ASC
+  TRACK_ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `PlaylistTrack` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input PlaylistTrackCondition {
+  """Checks for equality with the object’s `playlistId` field."""
+  playlistId: Int
+
+  """Checks for equality with the object’s `trackId` field."""
+  trackId: Int
+}
+
+"""A `PlaylistTrack` edge in the connection."""
+type PlaylistTracksEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `PlaylistTrack` at the end of the edge."""
+  node: PlaylistTrack
+}
+
+"""A `Track` edge in the connection."""
+type TracksEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Track` at the end of the edge."""
+  node: Track
+}
+
+"""A `Album` edge in the connection."""
+type AlbumsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Album` at the end of the edge."""
+  node: Album
+}
+
+"""A connection to a list of `Artist` values."""
+type ArtistsConnection {
+  """A list of `Artist` objects."""
+  nodes: [Artist]!
+
+  """
+  A list of edges which contains the `Artist` and cursor to aid in pagination.
+  """
+  edges: [ArtistsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Artist` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `Artist` edge in the connection."""
+type ArtistsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Artist` at the end of the edge."""
+  node: Artist
+}
+
+"""Methods to use when ordering `Artist`."""
+enum ArtistsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  NAME_ASC
+  NAME_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Artist` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input ArtistCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+}
+
+"""A connection to a list of `Category` values."""
+type CategoriesConnection {
+  """A list of `Category` objects."""
+  nodes: [Category]!
+
+  """
+  A list of edges which contains the `Category` and cursor to aid in pagination.
+  """
+  edges: [CategoriesEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Category` you could get from the connection."""
+  totalCount: Int!
+}
+
+type Category implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: Int!
+  name: String!
+  lastUpdate: Datetime!
+}
+
+"""A `Category` edge in the connection."""
+type CategoriesEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Category` at the end of the edge."""
+  node: Category
+}
+
+"""Methods to use when ordering `Category`."""
+enum CategoriesOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  NAME_ASC
+  NAME_DESC
+  LAST_UPDATE_ASC
+  LAST_UPDATE_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Category` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input CategoryCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+
+  """Checks for equality with the object’s `lastUpdate` field."""
+  lastUpdate: Datetime
+}
+
+"""A connection to a list of `FilmActor` values."""
+type FilmActorsConnection {
+  """A list of `FilmActor` objects."""
+  nodes: [FilmActor]!
+
+  """
+  A list of edges which contains the `FilmActor` and cursor to aid in pagination.
+  """
+  edges: [FilmActorsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `FilmActor` you could get from the connection."""
+  totalCount: Int!
+}
+
+type FilmActor implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  actorId: Int!
+  filmId: Int!
+  lastUpdate: Datetime!
+}
+
+"""A `FilmActor` edge in the connection."""
+type FilmActorsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `FilmActor` at the end of the edge."""
+  node: FilmActor
+}
+
+"""Methods to use when ordering `FilmActor`."""
+enum FilmActorsOrderBy {
+  NATURAL
+  ACTOR_ID_ASC
+  ACTOR_ID_DESC
+  FILM_ID_ASC
+  FILM_ID_DESC
+  LAST_UPDATE_ASC
+  LAST_UPDATE_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `FilmActor` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input FilmActorCondition {
+  """Checks for equality with the object’s `actorId` field."""
+  actorId: Int
+
+  """Checks for equality with the object’s `filmId` field."""
+  filmId: Int
+
+  """Checks for equality with the object’s `lastUpdate` field."""
+  lastUpdate: Datetime
+}
+
+"""A connection to a list of `FilmCategory` values."""
+type FilmCategoriesConnection {
+  """A list of `FilmCategory` objects."""
+  nodes: [FilmCategory]!
+
+  """
+  A list of edges which contains the `FilmCategory` and cursor to aid in pagination.
+  """
+  edges: [FilmCategoriesEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `FilmCategory` you could get from the connection."""
+  totalCount: Int!
+}
+
+type FilmCategory {
+  filmId: Int!
+  categoryId: Int!
+  lastUpdate: Datetime!
+}
+
+"""A `FilmCategory` edge in the connection."""
+type FilmCategoriesEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `FilmCategory` at the end of the edge."""
+  node: FilmCategory
+}
+
+"""Methods to use when ordering `FilmCategory`."""
+enum FilmCategoriesOrderBy {
+  NATURAL
+  FILM_ID_ASC
+  FILM_ID_DESC
+  CATEGORY_ID_ASC
+  CATEGORY_ID_DESC
+  LAST_UPDATE_ASC
+  LAST_UPDATE_DESC
+}
+
+"""
+A condition to be used against `FilmCategory` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input FilmCategoryCondition {
+  """Checks for equality with the object’s `filmId` field."""
+  filmId: Int
+
+  """Checks for equality with the object’s `categoryId` field."""
+  categoryId: Int
+
+  """Checks for equality with the object’s `lastUpdate` field."""
+  lastUpdate: Datetime
+}
+
+"""A connection to a list of `Film` values."""
+type FilmsConnection {
+  """A list of `Film` objects."""
+  nodes: [Film]!
+
+  """
+  A list of edges which contains the `Film` and cursor to aid in pagination.
+  """
+  edges: [FilmsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Film` you could get from the connection."""
+  totalCount: Int!
+}
+
+type Film implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: Int!
+  title: String!
+  description: String
+  releaseYear: Int
+  languageId: Int!
+  rentalDuration: Int!
+  rentalRate: BigFloat!
+  length: Int
+  replacementCost: BigFloat!
+  rating: String
+  lastUpdate: Datetime!
+  specialFeatures: [String]
+  fulltext: String!
+}
+
+"""A `Film` edge in the connection."""
+type FilmsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Film` at the end of the edge."""
+  node: Film
+}
+
+"""Methods to use when ordering `Film`."""
+enum FilmsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  TITLE_ASC
+  TITLE_DESC
+  DESCRIPTION_ASC
+  DESCRIPTION_DESC
+  RELEASE_YEAR_ASC
+  RELEASE_YEAR_DESC
+  LANGUAGE_ID_ASC
+  LANGUAGE_ID_DESC
+  RENTAL_DURATION_ASC
+  RENTAL_DURATION_DESC
+  RENTAL_RATE_ASC
+  RENTAL_RATE_DESC
+  LENGTH_ASC
+  LENGTH_DESC
+  REPLACEMENT_COST_ASC
+  REPLACEMENT_COST_DESC
+  RATING_ASC
+  RATING_DESC
+  LAST_UPDATE_ASC
+  LAST_UPDATE_DESC
+  SPECIAL_FEATURES_ASC
+  SPECIAL_FEATURES_DESC
+  FULLTEXT_ASC
+  FULLTEXT_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Film` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input FilmCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `title` field."""
+  title: String
+
+  """Checks for equality with the object’s `description` field."""
+  description: String
+
+  """Checks for equality with the object’s `releaseYear` field."""
+  releaseYear: Int
+
+  """Checks for equality with the object’s `languageId` field."""
+  languageId: Int
+
+  """Checks for equality with the object’s `rentalDuration` field."""
+  rentalDuration: Int
+
+  """Checks for equality with the object’s `rentalRate` field."""
+  rentalRate: BigFloat
+
+  """Checks for equality with the object’s `length` field."""
+  length: Int
+
+  """Checks for equality with the object’s `replacementCost` field."""
+  replacementCost: BigFloat
+
+  """Checks for equality with the object’s `rating` field."""
+  rating: String
+
+  """Checks for equality with the object’s `lastUpdate` field."""
+  lastUpdate: Datetime
+
+  """Checks for equality with the object’s `specialFeatures` field."""
+  specialFeatures: [String]
+
+  """Checks for equality with the object’s `fulltext` field."""
+  fulltext: String
+}
+
+"""A connection to a list of `Genre` values."""
+type GenresConnection {
+  """A list of `Genre` objects."""
+  nodes: [Genre]!
+
+  """
+  A list of edges which contains the `Genre` and cursor to aid in pagination.
+  """
+  edges: [GenresEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Genre` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `Genre` edge in the connection."""
+type GenresEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Genre` at the end of the edge."""
+  node: Genre
+}
+
+"""Methods to use when ordering `Genre`."""
+enum GenresOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  NAME_ASC
+  NAME_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Genre` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input GenreCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+}
+
+"""A connection to a list of `MediaType` values."""
+type MediaTypesConnection {
+  """A list of `MediaType` objects."""
+  nodes: [MediaType]!
+
+  """
+  A list of edges which contains the `MediaType` and cursor to aid in pagination.
+  """
+  edges: [MediaTypesEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `MediaType` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `MediaType` edge in the connection."""
+type MediaTypesEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `MediaType` at the end of the edge."""
+  node: MediaType
+}
+
+"""Methods to use when ordering `MediaType`."""
+enum MediaTypesOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  NAME_ASC
+  NAME_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `MediaType` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input MediaTypeCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+}
+
+"""A connection to a list of `Playlist` values."""
+type PlaylistsConnection {
+  """A list of `Playlist` objects."""
+  nodes: [Playlist]!
+
+  """
+  A list of edges which contains the `Playlist` and cursor to aid in pagination.
+  """
+  edges: [PlaylistsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Playlist` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `Playlist` edge in the connection."""
+type PlaylistsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Playlist` at the end of the edge."""
+  node: Playlist
+}
+
+"""Methods to use when ordering `Playlist`."""
+enum PlaylistsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  NAME_ASC
+  NAME_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Playlist` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input PlaylistCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+}
+
+"""
+The root mutation type which contains root level fields which mutate data.
+"""
+type Mutation {
+  """Creates a single `Actor`."""
+  createActor(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateActorInput!
+  ): CreateActorPayload
+
+  """Creates a single `Album`."""
+  createAlbum(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateAlbumInput!
+  ): CreateAlbumPayload
+
+  """Creates a single `Artist`."""
+  createArtist(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateArtistInput!
+  ): CreateArtistPayload
+
+  """Creates a single `Category`."""
+  createCategory(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateCategoryInput!
+  ): CreateCategoryPayload
+
+  """Creates a single `Customer`."""
+  createCustomer(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateCustomerInput!
+  ): CreateCustomerPayload
+
+  """Creates a single `Employee`."""
+  createEmployee(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateEmployeeInput!
+  ): CreateEmployeePayload
+
+  """Creates a single `FilmActor`."""
+  createFilmActor(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateFilmActorInput!
+  ): CreateFilmActorPayload
+
+  """Creates a single `FilmCategory`."""
+  createFilmCategory(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateFilmCategoryInput!
+  ): CreateFilmCategoryPayload
+
+  """Creates a single `Film`."""
+  createFilm(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateFilmInput!
+  ): CreateFilmPayload
+
+  """Creates a single `Genre`."""
+  createGenre(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateGenreInput!
+  ): CreateGenrePayload
+
+  """Creates a single `InvoiceLine`."""
+  createInvoiceLine(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateInvoiceLineInput!
+  ): CreateInvoiceLinePayload
+
+  """Creates a single `Invoice`."""
+  createInvoice(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateInvoiceInput!
+  ): CreateInvoicePayload
+
+  """Creates a single `MediaType`."""
+  createMediaType(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateMediaTypeInput!
+  ): CreateMediaTypePayload
+
+  """Creates a single `PlaylistTrack`."""
+  createPlaylistTrack(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreatePlaylistTrackInput!
+  ): CreatePlaylistTrackPayload
+
+  """Creates a single `Playlist`."""
+  createPlaylist(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreatePlaylistInput!
+  ): CreatePlaylistPayload
+
+  """Creates a single `Track`."""
+  createTrack(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateTrackInput!
+  ): CreateTrackPayload
+
+  """Updates a single `Actor` using its globally unique id and a patch."""
+  updateActor(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateActorInput!
+  ): UpdateActorPayload
+
+  """Updates a single `Actor` using a unique key and a patch."""
+  updateActorById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateActorByIdInput!
+  ): UpdateActorPayload
+
+  """Updates a single `Album` using its globally unique id and a patch."""
+  updateAlbum(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateAlbumInput!
+  ): UpdateAlbumPayload
+
+  """Updates a single `Album` using a unique key and a patch."""
+  updateAlbumById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateAlbumByIdInput!
+  ): UpdateAlbumPayload
+
+  """Updates a single `Artist` using its globally unique id and a patch."""
+  updateArtist(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateArtistInput!
+  ): UpdateArtistPayload
+
+  """Updates a single `Artist` using a unique key and a patch."""
+  updateArtistById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateArtistByIdInput!
+  ): UpdateArtistPayload
+
+  """Updates a single `Category` using its globally unique id and a patch."""
+  updateCategory(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateCategoryInput!
+  ): UpdateCategoryPayload
+
+  """Updates a single `Category` using a unique key and a patch."""
+  updateCategoryById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateCategoryByIdInput!
+  ): UpdateCategoryPayload
+
+  """Updates a single `Customer` using its globally unique id and a patch."""
+  updateCustomer(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateCustomerInput!
+  ): UpdateCustomerPayload
+
+  """Updates a single `Customer` using a unique key and a patch."""
+  updateCustomerById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateCustomerByIdInput!
+  ): UpdateCustomerPayload
+
+  """Updates a single `Employee` using its globally unique id and a patch."""
+  updateEmployee(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateEmployeeInput!
+  ): UpdateEmployeePayload
+
+  """Updates a single `Employee` using a unique key and a patch."""
+  updateEmployeeById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateEmployeeByIdInput!
+  ): UpdateEmployeePayload
+
+  """Updates a single `FilmActor` using its globally unique id and a patch."""
+  updateFilmActor(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateFilmActorInput!
+  ): UpdateFilmActorPayload
+
+  """Updates a single `FilmActor` using a unique key and a patch."""
+  updateFilmActorByActorIdAndFilmId(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateFilmActorByActorIdAndFilmIdInput!
+  ): UpdateFilmActorPayload
+
+  """Updates a single `Film` using its globally unique id and a patch."""
+  updateFilm(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateFilmInput!
+  ): UpdateFilmPayload
+
+  """Updates a single `Film` using a unique key and a patch."""
+  updateFilmById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateFilmByIdInput!
+  ): UpdateFilmPayload
+
+  """Updates a single `Genre` using its globally unique id and a patch."""
+  updateGenre(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateGenreInput!
+  ): UpdateGenrePayload
+
+  """Updates a single `Genre` using a unique key and a patch."""
+  updateGenreById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateGenreByIdInput!
+  ): UpdateGenrePayload
+
+  """
+  Updates a single `InvoiceLine` using its globally unique id and a patch.
+  """
+  updateInvoiceLine(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateInvoiceLineInput!
+  ): UpdateInvoiceLinePayload
+
+  """Updates a single `InvoiceLine` using a unique key and a patch."""
+  updateInvoiceLineById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateInvoiceLineByIdInput!
+  ): UpdateInvoiceLinePayload
+
+  """Updates a single `Invoice` using its globally unique id and a patch."""
+  updateInvoice(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateInvoiceInput!
+  ): UpdateInvoicePayload
+
+  """Updates a single `Invoice` using a unique key and a patch."""
+  updateInvoiceById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateInvoiceByIdInput!
+  ): UpdateInvoicePayload
+
+  """Updates a single `MediaType` using its globally unique id and a patch."""
+  updateMediaType(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateMediaTypeInput!
+  ): UpdateMediaTypePayload
+
+  """Updates a single `MediaType` using a unique key and a patch."""
+  updateMediaTypeById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateMediaTypeByIdInput!
+  ): UpdateMediaTypePayload
+
+  """
+  Updates a single `PlaylistTrack` using its globally unique id and a patch.
+  """
+  updatePlaylistTrack(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdatePlaylistTrackInput!
+  ): UpdatePlaylistTrackPayload
+
+  """Updates a single `PlaylistTrack` using a unique key and a patch."""
+  updatePlaylistTrackByPlaylistIdAndTrackId(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdatePlaylistTrackByPlaylistIdAndTrackIdInput!
+  ): UpdatePlaylistTrackPayload
+
+  """Updates a single `Playlist` using its globally unique id and a patch."""
+  updatePlaylist(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdatePlaylistInput!
+  ): UpdatePlaylistPayload
+
+  """Updates a single `Playlist` using a unique key and a patch."""
+  updatePlaylistById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdatePlaylistByIdInput!
+  ): UpdatePlaylistPayload
+
+  """Updates a single `Track` using its globally unique id and a patch."""
+  updateTrack(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateTrackInput!
+  ): UpdateTrackPayload
+
+  """Updates a single `Track` using a unique key and a patch."""
+  updateTrackById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateTrackByIdInput!
+  ): UpdateTrackPayload
+
+  """Deletes a single `Actor` using its globally unique id."""
+  deleteActor(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteActorInput!
+  ): DeleteActorPayload
+
+  """Deletes a single `Actor` using a unique key."""
+  deleteActorById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteActorByIdInput!
+  ): DeleteActorPayload
+
+  """Deletes a single `Album` using its globally unique id."""
+  deleteAlbum(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteAlbumInput!
+  ): DeleteAlbumPayload
+
+  """Deletes a single `Album` using a unique key."""
+  deleteAlbumById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteAlbumByIdInput!
+  ): DeleteAlbumPayload
+
+  """Deletes a single `Artist` using its globally unique id."""
+  deleteArtist(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteArtistInput!
+  ): DeleteArtistPayload
+
+  """Deletes a single `Artist` using a unique key."""
+  deleteArtistById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteArtistByIdInput!
+  ): DeleteArtistPayload
+
+  """Deletes a single `Category` using its globally unique id."""
+  deleteCategory(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteCategoryInput!
+  ): DeleteCategoryPayload
+
+  """Deletes a single `Category` using a unique key."""
+  deleteCategoryById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteCategoryByIdInput!
+  ): DeleteCategoryPayload
+
+  """Deletes a single `Customer` using its globally unique id."""
+  deleteCustomer(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteCustomerInput!
+  ): DeleteCustomerPayload
+
+  """Deletes a single `Customer` using a unique key."""
+  deleteCustomerById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteCustomerByIdInput!
+  ): DeleteCustomerPayload
+
+  """Deletes a single `Employee` using its globally unique id."""
+  deleteEmployee(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteEmployeeInput!
+  ): DeleteEmployeePayload
+
+  """Deletes a single `Employee` using a unique key."""
+  deleteEmployeeById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteEmployeeByIdInput!
+  ): DeleteEmployeePayload
+
+  """Deletes a single `FilmActor` using its globally unique id."""
+  deleteFilmActor(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteFilmActorInput!
+  ): DeleteFilmActorPayload
+
+  """Deletes a single `FilmActor` using a unique key."""
+  deleteFilmActorByActorIdAndFilmId(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteFilmActorByActorIdAndFilmIdInput!
+  ): DeleteFilmActorPayload
+
+  """Deletes a single `Film` using its globally unique id."""
+  deleteFilm(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteFilmInput!
+  ): DeleteFilmPayload
+
+  """Deletes a single `Film` using a unique key."""
+  deleteFilmById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteFilmByIdInput!
+  ): DeleteFilmPayload
+
+  """Deletes a single `Genre` using its globally unique id."""
+  deleteGenre(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteGenreInput!
+  ): DeleteGenrePayload
+
+  """Deletes a single `Genre` using a unique key."""
+  deleteGenreById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteGenreByIdInput!
+  ): DeleteGenrePayload
+
+  """Deletes a single `InvoiceLine` using its globally unique id."""
+  deleteInvoiceLine(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteInvoiceLineInput!
+  ): DeleteInvoiceLinePayload
+
+  """Deletes a single `InvoiceLine` using a unique key."""
+  deleteInvoiceLineById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteInvoiceLineByIdInput!
+  ): DeleteInvoiceLinePayload
+
+  """Deletes a single `Invoice` using its globally unique id."""
+  deleteInvoice(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteInvoiceInput!
+  ): DeleteInvoicePayload
+
+  """Deletes a single `Invoice` using a unique key."""
+  deleteInvoiceById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteInvoiceByIdInput!
+  ): DeleteInvoicePayload
+
+  """Deletes a single `MediaType` using its globally unique id."""
+  deleteMediaType(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteMediaTypeInput!
+  ): DeleteMediaTypePayload
+
+  """Deletes a single `MediaType` using a unique key."""
+  deleteMediaTypeById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteMediaTypeByIdInput!
+  ): DeleteMediaTypePayload
+
+  """Deletes a single `PlaylistTrack` using its globally unique id."""
+  deletePlaylistTrack(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeletePlaylistTrackInput!
+  ): DeletePlaylistTrackPayload
+
+  """Deletes a single `PlaylistTrack` using a unique key."""
+  deletePlaylistTrackByPlaylistIdAndTrackId(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeletePlaylistTrackByPlaylistIdAndTrackIdInput!
+  ): DeletePlaylistTrackPayload
+
+  """Deletes a single `Playlist` using its globally unique id."""
+  deletePlaylist(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeletePlaylistInput!
+  ): DeletePlaylistPayload
+
+  """Deletes a single `Playlist` using a unique key."""
+  deletePlaylistById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeletePlaylistByIdInput!
+  ): DeletePlaylistPayload
+
+  """Deletes a single `Track` using its globally unique id."""
+  deleteTrack(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteTrackInput!
+  ): DeleteTrackPayload
+
+  """Deletes a single `Track` using a unique key."""
+  deleteTrackById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteTrackByIdInput!
+  ): DeleteTrackPayload
+}
+
+"""The output of our create `Actor` mutation."""
+type CreateActorPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Actor` that was created by this mutation."""
+  actor: Actor
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Actor`. May be used by Relay 1."""
+  actorEdge(
+    """The method to use when ordering `Actor`."""
+    orderBy: [ActorsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): ActorsEdge
+}
+
+"""All input for the create `Actor` mutation."""
+input CreateActorInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Actor` to be created by this mutation."""
+  actor: ActorInput!
+}
+
+"""An input for mutations affecting `Actor`"""
+input ActorInput {
+  id: Int
+  firstName: String!
+  lastName: String!
+  lastUpdate: Datetime
+}
+
+"""The output of our create `Album` mutation."""
+type CreateAlbumPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Album` that was created by this mutation."""
+  album: Album
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Artist` that is related to this `Album`."""
+  artistByArtistId: Artist
+
+  """An edge for our `Album`. May be used by Relay 1."""
+  albumEdge(
+    """The method to use when ordering `Album`."""
+    orderBy: [AlbumsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): AlbumsEdge
+}
+
+"""All input for the create `Album` mutation."""
+input CreateAlbumInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Album` to be created by this mutation."""
+  album: AlbumInput!
+}
+
+"""An input for mutations affecting `Album`"""
+input AlbumInput {
+  id: Int
+  title: String!
+  artistId: Int!
+}
+
+"""The output of our create `Artist` mutation."""
+type CreateArtistPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Artist` that was created by this mutation."""
+  artist: Artist
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Artist`. May be used by Relay 1."""
+  artistEdge(
+    """The method to use when ordering `Artist`."""
+    orderBy: [ArtistsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): ArtistsEdge
+}
+
+"""All input for the create `Artist` mutation."""
+input CreateArtistInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Artist` to be created by this mutation."""
+  artist: ArtistInput!
+}
+
+"""An input for mutations affecting `Artist`"""
+input ArtistInput {
+  id: Int
+  name: String
+}
+
+"""The output of our create `Category` mutation."""
+type CreateCategoryPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Category` that was created by this mutation."""
+  category: Category
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Category`. May be used by Relay 1."""
+  categoryEdge(
+    """The method to use when ordering `Category`."""
+    orderBy: [CategoriesOrderBy!] = [PRIMARY_KEY_ASC]
+  ): CategoriesEdge
+}
+
+"""All input for the create `Category` mutation."""
+input CreateCategoryInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Category` to be created by this mutation."""
+  category: CategoryInput!
+}
+
+"""An input for mutations affecting `Category`"""
+input CategoryInput {
+  id: Int
+  name: String!
+  lastUpdate: Datetime
+}
+
+"""The output of our create `Customer` mutation."""
+type CreateCustomerPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Customer` that was created by this mutation."""
+  customer: Customer
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Employee` that is related to this `Customer`."""
+  employeeBySupportRepId: Employee
+
+  """An edge for our `Customer`. May be used by Relay 1."""
+  customerEdge(
+    """The method to use when ordering `Customer`."""
+    orderBy: [CustomersOrderBy!] = [PRIMARY_KEY_ASC]
+  ): CustomersEdge
+}
+
+"""All input for the create `Customer` mutation."""
+input CreateCustomerInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Customer` to be created by this mutation."""
+  customer: CustomerInput!
+}
+
+"""An input for mutations affecting `Customer`"""
+input CustomerInput {
+  id: Int
+  firstName: String!
+  lastName: String!
+  company: String
+  address: String
+  city: String
+  state: String
+  country: String
+  postalCode: String
+  phone: String
+  fax: String
+  email: String!
+  supportRepId: Int
+}
+
+"""The output of our create `Employee` mutation."""
+type CreateEmployeePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Employee` that was created by this mutation."""
+  employee: Employee
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Employee` that is related to this `Employee`."""
+  employeeByReportsTo: Employee
+
+  """An edge for our `Employee`. May be used by Relay 1."""
+  employeeEdge(
+    """The method to use when ordering `Employee`."""
+    orderBy: [EmployeesOrderBy!] = [PRIMARY_KEY_ASC]
+  ): EmployeesEdge
+}
+
+"""All input for the create `Employee` mutation."""
+input CreateEmployeeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Employee` to be created by this mutation."""
+  employee: EmployeeInput!
+}
+
+"""An input for mutations affecting `Employee`"""
+input EmployeeInput {
+  id: Int
+  lastName: String!
+  firstName: String!
+  title: String
+  reportsTo: Int
+  birthDate: Datetime
+  hireDate: Datetime
+  address: String
+  city: String
+  state: String
+  country: String
+  postalCode: String
+  phone: String
+  fax: String
+  email: String
+}
+
+"""The output of our create `FilmActor` mutation."""
+type CreateFilmActorPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `FilmActor` that was created by this mutation."""
+  filmActor: FilmActor
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `FilmActor`. May be used by Relay 1."""
+  filmActorEdge(
+    """The method to use when ordering `FilmActor`."""
+    orderBy: [FilmActorsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): FilmActorsEdge
+}
+
+"""All input for the create `FilmActor` mutation."""
+input CreateFilmActorInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `FilmActor` to be created by this mutation."""
+  filmActor: FilmActorInput!
+}
+
+"""An input for mutations affecting `FilmActor`"""
+input FilmActorInput {
+  actorId: Int!
+  filmId: Int!
+  lastUpdate: Datetime
+}
+
+"""The output of our create `FilmCategory` mutation."""
+type CreateFilmCategoryPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `FilmCategory` that was created by this mutation."""
+  filmCategory: FilmCategory
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `FilmCategory`. May be used by Relay 1."""
+  filmCategoryEdge(
+    """The method to use when ordering `FilmCategory`."""
+    orderBy: [FilmCategoriesOrderBy!] = [NATURAL]
+  ): FilmCategoriesEdge
+}
+
+"""All input for the create `FilmCategory` mutation."""
+input CreateFilmCategoryInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `FilmCategory` to be created by this mutation."""
+  filmCategory: FilmCategoryInput!
+}
+
+"""An input for mutations affecting `FilmCategory`"""
+input FilmCategoryInput {
+  filmId: Int!
+  categoryId: Int!
+  lastUpdate: Datetime
+}
+
+"""The output of our create `Film` mutation."""
+type CreateFilmPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Film` that was created by this mutation."""
+  film: Film
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Film`. May be used by Relay 1."""
+  filmEdge(
+    """The method to use when ordering `Film`."""
+    orderBy: [FilmsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): FilmsEdge
+}
+
+"""All input for the create `Film` mutation."""
+input CreateFilmInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Film` to be created by this mutation."""
+  film: FilmInput!
+}
+
+"""An input for mutations affecting `Film`"""
+input FilmInput {
+  id: Int
+  title: String!
+  description: String
+  releaseYear: Int
+  languageId: Int!
+  rentalDuration: Int
+  rentalRate: BigFloat
+  length: Int
+  replacementCost: BigFloat
+  rating: String
+  lastUpdate: Datetime
+  specialFeatures: [String]
+  fulltext: String!
+}
+
+"""The output of our create `Genre` mutation."""
+type CreateGenrePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Genre` that was created by this mutation."""
+  genre: Genre
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Genre`. May be used by Relay 1."""
+  genreEdge(
+    """The method to use when ordering `Genre`."""
+    orderBy: [GenresOrderBy!] = [PRIMARY_KEY_ASC]
+  ): GenresEdge
+}
+
+"""All input for the create `Genre` mutation."""
+input CreateGenreInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Genre` to be created by this mutation."""
+  genre: GenreInput!
+}
+
+"""An input for mutations affecting `Genre`"""
+input GenreInput {
+  id: Int
+  name: String
+}
+
+"""The output of our create `InvoiceLine` mutation."""
+type CreateInvoiceLinePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `InvoiceLine` that was created by this mutation."""
+  invoiceLine: InvoiceLine
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Invoice` that is related to this `InvoiceLine`."""
+  invoiceByInvoiceId: Invoice
+
+  """Reads a single `Track` that is related to this `InvoiceLine`."""
+  trackByTrackId: Track
+
+  """An edge for our `InvoiceLine`. May be used by Relay 1."""
+  invoiceLineEdge(
+    """The method to use when ordering `InvoiceLine`."""
+    orderBy: [InvoiceLinesOrderBy!] = [PRIMARY_KEY_ASC]
+  ): InvoiceLinesEdge
+}
+
+"""All input for the create `InvoiceLine` mutation."""
+input CreateInvoiceLineInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `InvoiceLine` to be created by this mutation."""
+  invoiceLine: InvoiceLineInput!
+}
+
+"""An input for mutations affecting `InvoiceLine`"""
+input InvoiceLineInput {
+  id: Int
+  invoiceId: Int!
+  trackId: Int!
+  unitPrice: BigFloat!
+  quantity: Int!
+}
+
+"""The output of our create `Invoice` mutation."""
+type CreateInvoicePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Invoice` that was created by this mutation."""
+  invoice: Invoice
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Customer` that is related to this `Invoice`."""
+  customerByCustomerId: Customer
+
+  """An edge for our `Invoice`. May be used by Relay 1."""
+  invoiceEdge(
+    """The method to use when ordering `Invoice`."""
+    orderBy: [InvoicesOrderBy!] = [PRIMARY_KEY_ASC]
+  ): InvoicesEdge
+}
+
+"""All input for the create `Invoice` mutation."""
+input CreateInvoiceInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Invoice` to be created by this mutation."""
+  invoice: InvoiceInput!
+}
+
+"""An input for mutations affecting `Invoice`"""
+input InvoiceInput {
+  id: Int
+  customerId: Int!
+  invoiceDate: Datetime!
+  billingAddress: String
+  billingCity: String
+  billingState: String
+  billingCountry: String
+  billingPostalCode: String
+  total: BigFloat!
+}
+
+"""The output of our create `MediaType` mutation."""
+type CreateMediaTypePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `MediaType` that was created by this mutation."""
+  mediaType: MediaType
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `MediaType`. May be used by Relay 1."""
+  mediaTypeEdge(
+    """The method to use when ordering `MediaType`."""
+    orderBy: [MediaTypesOrderBy!] = [PRIMARY_KEY_ASC]
+  ): MediaTypesEdge
+}
+
+"""All input for the create `MediaType` mutation."""
+input CreateMediaTypeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `MediaType` to be created by this mutation."""
+  mediaType: MediaTypeInput!
+}
+
+"""An input for mutations affecting `MediaType`"""
+input MediaTypeInput {
+  id: Int
+  name: String
+}
+
+"""The output of our create `PlaylistTrack` mutation."""
+type CreatePlaylistTrackPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `PlaylistTrack` that was created by this mutation."""
+  playlistTrack: PlaylistTrack
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Playlist` that is related to this `PlaylistTrack`."""
+  playlistByPlaylistId: Playlist
+
+  """Reads a single `Track` that is related to this `PlaylistTrack`."""
+  trackByTrackId: Track
+
+  """An edge for our `PlaylistTrack`. May be used by Relay 1."""
+  playlistTrackEdge(
+    """The method to use when ordering `PlaylistTrack`."""
+    orderBy: [PlaylistTracksOrderBy!] = [PRIMARY_KEY_ASC]
+  ): PlaylistTracksEdge
+}
+
+"""All input for the create `PlaylistTrack` mutation."""
+input CreatePlaylistTrackInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `PlaylistTrack` to be created by this mutation."""
+  playlistTrack: PlaylistTrackInput!
+}
+
+"""An input for mutations affecting `PlaylistTrack`"""
+input PlaylistTrackInput {
+  playlistId: Int!
+  trackId: Int!
+}
+
+"""The output of our create `Playlist` mutation."""
+type CreatePlaylistPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Playlist` that was created by this mutation."""
+  playlist: Playlist
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Playlist`. May be used by Relay 1."""
+  playlistEdge(
+    """The method to use when ordering `Playlist`."""
+    orderBy: [PlaylistsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): PlaylistsEdge
+}
+
+"""All input for the create `Playlist` mutation."""
+input CreatePlaylistInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Playlist` to be created by this mutation."""
+  playlist: PlaylistInput!
+}
+
+"""An input for mutations affecting `Playlist`"""
+input PlaylistInput {
+  id: Int
+  name: String
+}
+
+"""The output of our create `Track` mutation."""
+type CreateTrackPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Track` that was created by this mutation."""
+  track: Track
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Album` that is related to this `Track`."""
+  albumByAlbumId: Album
+
+  """Reads a single `MediaType` that is related to this `Track`."""
+  mediaTypeByMediaTypeId: MediaType
+
+  """Reads a single `Genre` that is related to this `Track`."""
+  genreByGenreId: Genre
+
+  """An edge for our `Track`. May be used by Relay 1."""
+  trackEdge(
+    """The method to use when ordering `Track`."""
+    orderBy: [TracksOrderBy!] = [PRIMARY_KEY_ASC]
+  ): TracksEdge
+}
+
+"""All input for the create `Track` mutation."""
+input CreateTrackInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Track` to be created by this mutation."""
+  track: TrackInput!
+}
+
+"""An input for mutations affecting `Track`"""
+input TrackInput {
+  id: Int
+  name: String!
+  albumId: Int
+  mediaTypeId: Int!
+  genreId: Int
+  composer: String
+  milliseconds: Int!
+  bytes: Int
+  unitPrice: BigFloat!
+}
+
+"""The output of our update `Actor` mutation."""
+type UpdateActorPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Actor` that was updated by this mutation."""
+  actor: Actor
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Actor`. May be used by Relay 1."""
+  actorEdge(
+    """The method to use when ordering `Actor`."""
+    orderBy: [ActorsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): ActorsEdge
+}
+
+"""All input for the `updateActor` mutation."""
+input UpdateActorInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Actor` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `Actor` being updated.
+  """
+  actorPatch: ActorPatch!
+}
+
+"""
+Represents an update to a `Actor`. Fields that are set will be updated.
+"""
+input ActorPatch {
+  id: Int
+  firstName: String
+  lastName: String
+  lastUpdate: Datetime
+}
+
+"""All input for the `updateActorById` mutation."""
+input UpdateActorByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Actor` being updated.
+  """
+  actorPatch: ActorPatch!
+  id: Int!
+}
+
+"""The output of our update `Album` mutation."""
+type UpdateAlbumPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Album` that was updated by this mutation."""
+  album: Album
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Artist` that is related to this `Album`."""
+  artistByArtistId: Artist
+
+  """An edge for our `Album`. May be used by Relay 1."""
+  albumEdge(
+    """The method to use when ordering `Album`."""
+    orderBy: [AlbumsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): AlbumsEdge
+}
+
+"""All input for the `updateAlbum` mutation."""
+input UpdateAlbumInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Album` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `Album` being updated.
+  """
+  albumPatch: AlbumPatch!
+}
+
+"""
+Represents an update to a `Album`. Fields that are set will be updated.
+"""
+input AlbumPatch {
+  id: Int
+  title: String
+  artistId: Int
+}
+
+"""All input for the `updateAlbumById` mutation."""
+input UpdateAlbumByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Album` being updated.
+  """
+  albumPatch: AlbumPatch!
+  id: Int!
+}
+
+"""The output of our update `Artist` mutation."""
+type UpdateArtistPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Artist` that was updated by this mutation."""
+  artist: Artist
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Artist`. May be used by Relay 1."""
+  artistEdge(
+    """The method to use when ordering `Artist`."""
+    orderBy: [ArtistsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): ArtistsEdge
+}
+
+"""All input for the `updateArtist` mutation."""
+input UpdateArtistInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Artist` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `Artist` being updated.
+  """
+  artistPatch: ArtistPatch!
+}
+
+"""
+Represents an update to a `Artist`. Fields that are set will be updated.
+"""
+input ArtistPatch {
+  id: Int
+  name: String
+}
+
+"""All input for the `updateArtistById` mutation."""
+input UpdateArtistByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Artist` being updated.
+  """
+  artistPatch: ArtistPatch!
+  id: Int!
+}
+
+"""The output of our update `Category` mutation."""
+type UpdateCategoryPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Category` that was updated by this mutation."""
+  category: Category
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Category`. May be used by Relay 1."""
+  categoryEdge(
+    """The method to use when ordering `Category`."""
+    orderBy: [CategoriesOrderBy!] = [PRIMARY_KEY_ASC]
+  ): CategoriesEdge
+}
+
+"""All input for the `updateCategory` mutation."""
+input UpdateCategoryInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Category` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `Category` being updated.
+  """
+  categoryPatch: CategoryPatch!
+}
+
+"""
+Represents an update to a `Category`. Fields that are set will be updated.
+"""
+input CategoryPatch {
+  id: Int
+  name: String
+  lastUpdate: Datetime
+}
+
+"""All input for the `updateCategoryById` mutation."""
+input UpdateCategoryByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Category` being updated.
+  """
+  categoryPatch: CategoryPatch!
+  id: Int!
+}
+
+"""The output of our update `Customer` mutation."""
+type UpdateCustomerPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Customer` that was updated by this mutation."""
+  customer: Customer
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Employee` that is related to this `Customer`."""
+  employeeBySupportRepId: Employee
+
+  """An edge for our `Customer`. May be used by Relay 1."""
+  customerEdge(
+    """The method to use when ordering `Customer`."""
+    orderBy: [CustomersOrderBy!] = [PRIMARY_KEY_ASC]
+  ): CustomersEdge
+}
+
+"""All input for the `updateCustomer` mutation."""
+input UpdateCustomerInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Customer` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `Customer` being updated.
+  """
+  customerPatch: CustomerPatch!
+}
+
+"""
+Represents an update to a `Customer`. Fields that are set will be updated.
+"""
+input CustomerPatch {
+  id: Int
+  firstName: String
+  lastName: String
+  company: String
+  address: String
+  city: String
+  state: String
+  country: String
+  postalCode: String
+  phone: String
+  fax: String
+  email: String
+  supportRepId: Int
+}
+
+"""All input for the `updateCustomerById` mutation."""
+input UpdateCustomerByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Customer` being updated.
+  """
+  customerPatch: CustomerPatch!
+  id: Int!
+}
+
+"""The output of our update `Employee` mutation."""
+type UpdateEmployeePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Employee` that was updated by this mutation."""
+  employee: Employee
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Employee` that is related to this `Employee`."""
+  employeeByReportsTo: Employee
+
+  """An edge for our `Employee`. May be used by Relay 1."""
+  employeeEdge(
+    """The method to use when ordering `Employee`."""
+    orderBy: [EmployeesOrderBy!] = [PRIMARY_KEY_ASC]
+  ): EmployeesEdge
+}
+
+"""All input for the `updateEmployee` mutation."""
+input UpdateEmployeeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Employee` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `Employee` being updated.
+  """
+  employeePatch: EmployeePatch!
+}
+
+"""
+Represents an update to a `Employee`. Fields that are set will be updated.
+"""
+input EmployeePatch {
+  id: Int
+  lastName: String
+  firstName: String
+  title: String
+  reportsTo: Int
+  birthDate: Datetime
+  hireDate: Datetime
+  address: String
+  city: String
+  state: String
+  country: String
+  postalCode: String
+  phone: String
+  fax: String
+  email: String
+}
+
+"""All input for the `updateEmployeeById` mutation."""
+input UpdateEmployeeByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Employee` being updated.
+  """
+  employeePatch: EmployeePatch!
+  id: Int!
+}
+
+"""The output of our update `FilmActor` mutation."""
+type UpdateFilmActorPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `FilmActor` that was updated by this mutation."""
+  filmActor: FilmActor
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `FilmActor`. May be used by Relay 1."""
+  filmActorEdge(
+    """The method to use when ordering `FilmActor`."""
+    orderBy: [FilmActorsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): FilmActorsEdge
+}
+
+"""All input for the `updateFilmActor` mutation."""
+input UpdateFilmActorInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `FilmActor` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `FilmActor` being updated.
+  """
+  filmActorPatch: FilmActorPatch!
+}
+
+"""
+Represents an update to a `FilmActor`. Fields that are set will be updated.
+"""
+input FilmActorPatch {
+  actorId: Int
+  filmId: Int
+  lastUpdate: Datetime
+}
+
+"""All input for the `updateFilmActorByActorIdAndFilmId` mutation."""
+input UpdateFilmActorByActorIdAndFilmIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `FilmActor` being updated.
+  """
+  filmActorPatch: FilmActorPatch!
+  actorId: Int!
+  filmId: Int!
+}
+
+"""The output of our update `Film` mutation."""
+type UpdateFilmPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Film` that was updated by this mutation."""
+  film: Film
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Film`. May be used by Relay 1."""
+  filmEdge(
+    """The method to use when ordering `Film`."""
+    orderBy: [FilmsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): FilmsEdge
+}
+
+"""All input for the `updateFilm` mutation."""
+input UpdateFilmInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Film` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `Film` being updated.
+  """
+  filmPatch: FilmPatch!
+}
+
+"""Represents an update to a `Film`. Fields that are set will be updated."""
+input FilmPatch {
+  id: Int
+  title: String
+  description: String
+  releaseYear: Int
+  languageId: Int
+  rentalDuration: Int
+  rentalRate: BigFloat
+  length: Int
+  replacementCost: BigFloat
+  rating: String
+  lastUpdate: Datetime
+  specialFeatures: [String]
+  fulltext: String
+}
+
+"""All input for the `updateFilmById` mutation."""
+input UpdateFilmByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Film` being updated.
+  """
+  filmPatch: FilmPatch!
+  id: Int!
+}
+
+"""The output of our update `Genre` mutation."""
+type UpdateGenrePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Genre` that was updated by this mutation."""
+  genre: Genre
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Genre`. May be used by Relay 1."""
+  genreEdge(
+    """The method to use when ordering `Genre`."""
+    orderBy: [GenresOrderBy!] = [PRIMARY_KEY_ASC]
+  ): GenresEdge
+}
+
+"""All input for the `updateGenre` mutation."""
+input UpdateGenreInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Genre` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `Genre` being updated.
+  """
+  genrePatch: GenrePatch!
+}
+
+"""
+Represents an update to a `Genre`. Fields that are set will be updated.
+"""
+input GenrePatch {
+  id: Int
+  name: String
+}
+
+"""All input for the `updateGenreById` mutation."""
+input UpdateGenreByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Genre` being updated.
+  """
+  genrePatch: GenrePatch!
+  id: Int!
+}
+
+"""The output of our update `InvoiceLine` mutation."""
+type UpdateInvoiceLinePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `InvoiceLine` that was updated by this mutation."""
+  invoiceLine: InvoiceLine
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Invoice` that is related to this `InvoiceLine`."""
+  invoiceByInvoiceId: Invoice
+
+  """Reads a single `Track` that is related to this `InvoiceLine`."""
+  trackByTrackId: Track
+
+  """An edge for our `InvoiceLine`. May be used by Relay 1."""
+  invoiceLineEdge(
+    """The method to use when ordering `InvoiceLine`."""
+    orderBy: [InvoiceLinesOrderBy!] = [PRIMARY_KEY_ASC]
+  ): InvoiceLinesEdge
+}
+
+"""All input for the `updateInvoiceLine` mutation."""
+input UpdateInvoiceLineInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `InvoiceLine` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `InvoiceLine` being updated.
+  """
+  invoiceLinePatch: InvoiceLinePatch!
+}
+
+"""
+Represents an update to a `InvoiceLine`. Fields that are set will be updated.
+"""
+input InvoiceLinePatch {
+  id: Int
+  invoiceId: Int
+  trackId: Int
+  unitPrice: BigFloat
+  quantity: Int
+}
+
+"""All input for the `updateInvoiceLineById` mutation."""
+input UpdateInvoiceLineByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `InvoiceLine` being updated.
+  """
+  invoiceLinePatch: InvoiceLinePatch!
+  id: Int!
+}
+
+"""The output of our update `Invoice` mutation."""
+type UpdateInvoicePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Invoice` that was updated by this mutation."""
+  invoice: Invoice
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Customer` that is related to this `Invoice`."""
+  customerByCustomerId: Customer
+
+  """An edge for our `Invoice`. May be used by Relay 1."""
+  invoiceEdge(
+    """The method to use when ordering `Invoice`."""
+    orderBy: [InvoicesOrderBy!] = [PRIMARY_KEY_ASC]
+  ): InvoicesEdge
+}
+
+"""All input for the `updateInvoice` mutation."""
+input UpdateInvoiceInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Invoice` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `Invoice` being updated.
+  """
+  invoicePatch: InvoicePatch!
+}
+
+"""
+Represents an update to a `Invoice`. Fields that are set will be updated.
+"""
+input InvoicePatch {
+  id: Int
+  customerId: Int
+  invoiceDate: Datetime
+  billingAddress: String
+  billingCity: String
+  billingState: String
+  billingCountry: String
+  billingPostalCode: String
+  total: BigFloat
+}
+
+"""All input for the `updateInvoiceById` mutation."""
+input UpdateInvoiceByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Invoice` being updated.
+  """
+  invoicePatch: InvoicePatch!
+  id: Int!
+}
+
+"""The output of our update `MediaType` mutation."""
+type UpdateMediaTypePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `MediaType` that was updated by this mutation."""
+  mediaType: MediaType
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `MediaType`. May be used by Relay 1."""
+  mediaTypeEdge(
+    """The method to use when ordering `MediaType`."""
+    orderBy: [MediaTypesOrderBy!] = [PRIMARY_KEY_ASC]
+  ): MediaTypesEdge
+}
+
+"""All input for the `updateMediaType` mutation."""
+input UpdateMediaTypeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `MediaType` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `MediaType` being updated.
+  """
+  mediaTypePatch: MediaTypePatch!
+}
+
+"""
+Represents an update to a `MediaType`. Fields that are set will be updated.
+"""
+input MediaTypePatch {
+  id: Int
+  name: String
+}
+
+"""All input for the `updateMediaTypeById` mutation."""
+input UpdateMediaTypeByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `MediaType` being updated.
+  """
+  mediaTypePatch: MediaTypePatch!
+  id: Int!
+}
+
+"""The output of our update `PlaylistTrack` mutation."""
+type UpdatePlaylistTrackPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `PlaylistTrack` that was updated by this mutation."""
+  playlistTrack: PlaylistTrack
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Playlist` that is related to this `PlaylistTrack`."""
+  playlistByPlaylistId: Playlist
+
+  """Reads a single `Track` that is related to this `PlaylistTrack`."""
+  trackByTrackId: Track
+
+  """An edge for our `PlaylistTrack`. May be used by Relay 1."""
+  playlistTrackEdge(
+    """The method to use when ordering `PlaylistTrack`."""
+    orderBy: [PlaylistTracksOrderBy!] = [PRIMARY_KEY_ASC]
+  ): PlaylistTracksEdge
+}
+
+"""All input for the `updatePlaylistTrack` mutation."""
+input UpdatePlaylistTrackInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `PlaylistTrack` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `PlaylistTrack` being updated.
+  """
+  playlistTrackPatch: PlaylistTrackPatch!
+}
+
+"""
+Represents an update to a `PlaylistTrack`. Fields that are set will be updated.
+"""
+input PlaylistTrackPatch {
+  playlistId: Int
+  trackId: Int
+}
+
+"""
+All input for the `updatePlaylistTrackByPlaylistIdAndTrackId` mutation.
+"""
+input UpdatePlaylistTrackByPlaylistIdAndTrackIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `PlaylistTrack` being updated.
+  """
+  playlistTrackPatch: PlaylistTrackPatch!
+  playlistId: Int!
+  trackId: Int!
+}
+
+"""The output of our update `Playlist` mutation."""
+type UpdatePlaylistPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Playlist` that was updated by this mutation."""
+  playlist: Playlist
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Playlist`. May be used by Relay 1."""
+  playlistEdge(
+    """The method to use when ordering `Playlist`."""
+    orderBy: [PlaylistsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): PlaylistsEdge
+}
+
+"""All input for the `updatePlaylist` mutation."""
+input UpdatePlaylistInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Playlist` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `Playlist` being updated.
+  """
+  playlistPatch: PlaylistPatch!
+}
+
+"""
+Represents an update to a `Playlist`. Fields that are set will be updated.
+"""
+input PlaylistPatch {
+  id: Int
+  name: String
+}
+
+"""All input for the `updatePlaylistById` mutation."""
+input UpdatePlaylistByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Playlist` being updated.
+  """
+  playlistPatch: PlaylistPatch!
+  id: Int!
+}
+
+"""The output of our update `Track` mutation."""
+type UpdateTrackPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Track` that was updated by this mutation."""
+  track: Track
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Album` that is related to this `Track`."""
+  albumByAlbumId: Album
+
+  """Reads a single `MediaType` that is related to this `Track`."""
+  mediaTypeByMediaTypeId: MediaType
+
+  """Reads a single `Genre` that is related to this `Track`."""
+  genreByGenreId: Genre
+
+  """An edge for our `Track`. May be used by Relay 1."""
+  trackEdge(
+    """The method to use when ordering `Track`."""
+    orderBy: [TracksOrderBy!] = [PRIMARY_KEY_ASC]
+  ): TracksEdge
+}
+
+"""All input for the `updateTrack` mutation."""
+input UpdateTrackInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Track` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `Track` being updated.
+  """
+  trackPatch: TrackPatch!
+}
+
+"""
+Represents an update to a `Track`. Fields that are set will be updated.
+"""
+input TrackPatch {
+  id: Int
+  name: String
+  albumId: Int
+  mediaTypeId: Int
+  genreId: Int
+  composer: String
+  milliseconds: Int
+  bytes: Int
+  unitPrice: BigFloat
+}
+
+"""All input for the `updateTrackById` mutation."""
+input UpdateTrackByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Track` being updated.
+  """
+  trackPatch: TrackPatch!
+  id: Int!
+}
+
+"""The output of our delete `Actor` mutation."""
+type DeleteActorPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Actor` that was deleted by this mutation."""
+  actor: Actor
+  deletedActorId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Actor`. May be used by Relay 1."""
+  actorEdge(
+    """The method to use when ordering `Actor`."""
+    orderBy: [ActorsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): ActorsEdge
+}
+
+"""All input for the `deleteActor` mutation."""
+input DeleteActorInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Actor` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""All input for the `deleteActorById` mutation."""
+input DeleteActorByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `Album` mutation."""
+type DeleteAlbumPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Album` that was deleted by this mutation."""
+  album: Album
+  deletedAlbumId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Artist` that is related to this `Album`."""
+  artistByArtistId: Artist
+
+  """An edge for our `Album`. May be used by Relay 1."""
+  albumEdge(
+    """The method to use when ordering `Album`."""
+    orderBy: [AlbumsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): AlbumsEdge
+}
+
+"""All input for the `deleteAlbum` mutation."""
+input DeleteAlbumInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Album` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""All input for the `deleteAlbumById` mutation."""
+input DeleteAlbumByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `Artist` mutation."""
+type DeleteArtistPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Artist` that was deleted by this mutation."""
+  artist: Artist
+  deletedArtistId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Artist`. May be used by Relay 1."""
+  artistEdge(
+    """The method to use when ordering `Artist`."""
+    orderBy: [ArtistsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): ArtistsEdge
+}
+
+"""All input for the `deleteArtist` mutation."""
+input DeleteArtistInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Artist` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""All input for the `deleteArtistById` mutation."""
+input DeleteArtistByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `Category` mutation."""
+type DeleteCategoryPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Category` that was deleted by this mutation."""
+  category: Category
+  deletedCategoryId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Category`. May be used by Relay 1."""
+  categoryEdge(
+    """The method to use when ordering `Category`."""
+    orderBy: [CategoriesOrderBy!] = [PRIMARY_KEY_ASC]
+  ): CategoriesEdge
+}
+
+"""All input for the `deleteCategory` mutation."""
+input DeleteCategoryInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Category` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""All input for the `deleteCategoryById` mutation."""
+input DeleteCategoryByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `Customer` mutation."""
+type DeleteCustomerPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Customer` that was deleted by this mutation."""
+  customer: Customer
+  deletedCustomerId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Employee` that is related to this `Customer`."""
+  employeeBySupportRepId: Employee
+
+  """An edge for our `Customer`. May be used by Relay 1."""
+  customerEdge(
+    """The method to use when ordering `Customer`."""
+    orderBy: [CustomersOrderBy!] = [PRIMARY_KEY_ASC]
+  ): CustomersEdge
+}
+
+"""All input for the `deleteCustomer` mutation."""
+input DeleteCustomerInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Customer` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""All input for the `deleteCustomerById` mutation."""
+input DeleteCustomerByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `Employee` mutation."""
+type DeleteEmployeePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Employee` that was deleted by this mutation."""
+  employee: Employee
+  deletedEmployeeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Employee` that is related to this `Employee`."""
+  employeeByReportsTo: Employee
+
+  """An edge for our `Employee`. May be used by Relay 1."""
+  employeeEdge(
+    """The method to use when ordering `Employee`."""
+    orderBy: [EmployeesOrderBy!] = [PRIMARY_KEY_ASC]
+  ): EmployeesEdge
+}
+
+"""All input for the `deleteEmployee` mutation."""
+input DeleteEmployeeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Employee` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""All input for the `deleteEmployeeById` mutation."""
+input DeleteEmployeeByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `FilmActor` mutation."""
+type DeleteFilmActorPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `FilmActor` that was deleted by this mutation."""
+  filmActor: FilmActor
+  deletedFilmActorId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `FilmActor`. May be used by Relay 1."""
+  filmActorEdge(
+    """The method to use when ordering `FilmActor`."""
+    orderBy: [FilmActorsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): FilmActorsEdge
+}
+
+"""All input for the `deleteFilmActor` mutation."""
+input DeleteFilmActorInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `FilmActor` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""All input for the `deleteFilmActorByActorIdAndFilmId` mutation."""
+input DeleteFilmActorByActorIdAndFilmIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  actorId: Int!
+  filmId: Int!
+}
+
+"""The output of our delete `Film` mutation."""
+type DeleteFilmPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Film` that was deleted by this mutation."""
+  film: Film
+  deletedFilmId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Film`. May be used by Relay 1."""
+  filmEdge(
+    """The method to use when ordering `Film`."""
+    orderBy: [FilmsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): FilmsEdge
+}
+
+"""All input for the `deleteFilm` mutation."""
+input DeleteFilmInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Film` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""All input for the `deleteFilmById` mutation."""
+input DeleteFilmByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `Genre` mutation."""
+type DeleteGenrePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Genre` that was deleted by this mutation."""
+  genre: Genre
+  deletedGenreId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Genre`. May be used by Relay 1."""
+  genreEdge(
+    """The method to use when ordering `Genre`."""
+    orderBy: [GenresOrderBy!] = [PRIMARY_KEY_ASC]
+  ): GenresEdge
+}
+
+"""All input for the `deleteGenre` mutation."""
+input DeleteGenreInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Genre` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""All input for the `deleteGenreById` mutation."""
+input DeleteGenreByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `InvoiceLine` mutation."""
+type DeleteInvoiceLinePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `InvoiceLine` that was deleted by this mutation."""
+  invoiceLine: InvoiceLine
+  deletedInvoiceLineId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Invoice` that is related to this `InvoiceLine`."""
+  invoiceByInvoiceId: Invoice
+
+  """Reads a single `Track` that is related to this `InvoiceLine`."""
+  trackByTrackId: Track
+
+  """An edge for our `InvoiceLine`. May be used by Relay 1."""
+  invoiceLineEdge(
+    """The method to use when ordering `InvoiceLine`."""
+    orderBy: [InvoiceLinesOrderBy!] = [PRIMARY_KEY_ASC]
+  ): InvoiceLinesEdge
+}
+
+"""All input for the `deleteInvoiceLine` mutation."""
+input DeleteInvoiceLineInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `InvoiceLine` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""All input for the `deleteInvoiceLineById` mutation."""
+input DeleteInvoiceLineByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `Invoice` mutation."""
+type DeleteInvoicePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Invoice` that was deleted by this mutation."""
+  invoice: Invoice
+  deletedInvoiceId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Customer` that is related to this `Invoice`."""
+  customerByCustomerId: Customer
+
+  """An edge for our `Invoice`. May be used by Relay 1."""
+  invoiceEdge(
+    """The method to use when ordering `Invoice`."""
+    orderBy: [InvoicesOrderBy!] = [PRIMARY_KEY_ASC]
+  ): InvoicesEdge
+}
+
+"""All input for the `deleteInvoice` mutation."""
+input DeleteInvoiceInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Invoice` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""All input for the `deleteInvoiceById` mutation."""
+input DeleteInvoiceByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `MediaType` mutation."""
+type DeleteMediaTypePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `MediaType` that was deleted by this mutation."""
+  mediaType: MediaType
+  deletedMediaTypeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `MediaType`. May be used by Relay 1."""
+  mediaTypeEdge(
+    """The method to use when ordering `MediaType`."""
+    orderBy: [MediaTypesOrderBy!] = [PRIMARY_KEY_ASC]
+  ): MediaTypesEdge
+}
+
+"""All input for the `deleteMediaType` mutation."""
+input DeleteMediaTypeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `MediaType` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""All input for the `deleteMediaTypeById` mutation."""
+input DeleteMediaTypeByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `PlaylistTrack` mutation."""
+type DeletePlaylistTrackPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `PlaylistTrack` that was deleted by this mutation."""
+  playlistTrack: PlaylistTrack
+  deletedPlaylistTrackId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Playlist` that is related to this `PlaylistTrack`."""
+  playlistByPlaylistId: Playlist
+
+  """Reads a single `Track` that is related to this `PlaylistTrack`."""
+  trackByTrackId: Track
+
+  """An edge for our `PlaylistTrack`. May be used by Relay 1."""
+  playlistTrackEdge(
+    """The method to use when ordering `PlaylistTrack`."""
+    orderBy: [PlaylistTracksOrderBy!] = [PRIMARY_KEY_ASC]
+  ): PlaylistTracksEdge
+}
+
+"""All input for the `deletePlaylistTrack` mutation."""
+input DeletePlaylistTrackInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `PlaylistTrack` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""
+All input for the `deletePlaylistTrackByPlaylistIdAndTrackId` mutation.
+"""
+input DeletePlaylistTrackByPlaylistIdAndTrackIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  playlistId: Int!
+  trackId: Int!
+}
+
+"""The output of our delete `Playlist` mutation."""
+type DeletePlaylistPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Playlist` that was deleted by this mutation."""
+  playlist: Playlist
+  deletedPlaylistId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Playlist`. May be used by Relay 1."""
+  playlistEdge(
+    """The method to use when ordering `Playlist`."""
+    orderBy: [PlaylistsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): PlaylistsEdge
+}
+
+"""All input for the `deletePlaylist` mutation."""
+input DeletePlaylistInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Playlist` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""All input for the `deletePlaylistById` mutation."""
+input DeletePlaylistByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `Track` mutation."""
+type DeleteTrackPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Track` that was deleted by this mutation."""
+  track: Track
+  deletedTrackId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Album` that is related to this `Track`."""
+  albumByAlbumId: Album
+
+  """Reads a single `MediaType` that is related to this `Track`."""
+  mediaTypeByMediaTypeId: MediaType
+
+  """Reads a single `Genre` that is related to this `Track`."""
+  genreByGenreId: Genre
+
+  """An edge for our `Track`. May be used by Relay 1."""
+  trackEdge(
+    """The method to use when ordering `Track`."""
+    orderBy: [TracksOrderBy!] = [PRIMARY_KEY_ASC]
+  ): TracksEdge
+}
+
+"""All input for the `deleteTrack` mutation."""
+input DeleteTrackInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Track` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""All input for the `deleteTrackById` mutation."""
+input DeleteTrackByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}

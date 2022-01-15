@@ -10,6 +10,7 @@ usage() {
 init() {
     N_CPUS=$(nproc --all)
     docker build --no-cache -t postgraphile_ssl "${SCRIPT_DIR}/postgraphile_ssl"
+		echo "database_url: ${SCRIPT_DIR}"
 		docker run --name postgraphile-ssl-chinook -d -p 5000:5000 -e DATABASE_URL=$DATABASE_URL -e PORT=5000 postgraphile_ssl
 }
 
