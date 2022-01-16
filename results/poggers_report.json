@@ -1,0 +1,1608 @@
+[
+  {
+    "name": "AlbumsTracksGenreAll-k6-60s-max-requests",
+    "time": {
+      "start": "2022-01-16T18:40:16.360Z",
+      "end": "2022-01-16T18:41:19.251Z"
+    },
+    "requests": {
+      "count": 1932,
+      "average": 31.34353384932558
+    },
+    "response": {
+      "totalBytes": 626207568,
+      "bytesPerSecond": 10159191.565378804
+    },
+    "histogram": {
+      "json": {
+        "p50": 1520,
+        "p75": 1670,
+        "p90": 1860,
+        "p97_5": 2250,
+        "p99": 2420,
+        "p99_9": 2780,
+        "p99_99": 2920,
+        "p99_999": 2920,
+        "max": 2918.599831,
+        "totalCount": 1932,
+        "mean": 1571.5502111801243,
+        "min": 640.235,
+        "stdDeviation": 236.56187241906716
+      },
+      "parsedStats": [
+        {
+          "value": "640.511",
+          "percentile": "0.000000000000",
+          "totalCount": "1",
+          "ofOnePercentile": "1.00"
+        },
+        {
+          "value": "1338.367",
+          "percentile": "0.100000000000",
+          "totalCount": "195",
+          "ofOnePercentile": "1.11"
+        },
+        {
+          "value": "1391.615",
+          "percentile": "0.200000000000",
+          "totalCount": "389",
+          "ofOnePercentile": "1.25"
+        },
+        {
+          "value": "1437.695",
+          "percentile": "0.300000000000",
+          "totalCount": "581",
+          "ofOnePercentile": "1.43"
+        },
+        {
+          "value": "1474.559",
+          "percentile": "0.400000000000",
+          "totalCount": "774",
+          "ofOnePercentile": "1.67"
+        },
+        {
+          "value": "1524.735",
+          "percentile": "0.500000000000",
+          "totalCount": "966",
+          "ofOnePercentile": "2.00"
+        },
+        {
+          "value": "1547.263",
+          "percentile": "0.550000000000",
+          "totalCount": "1063",
+          "ofOnePercentile": "2.22"
+        },
+        {
+          "value": "1567.743",
+          "percentile": "0.600000000000",
+          "totalCount": "1162",
+          "ofOnePercentile": "2.50"
+        },
+        {
+          "value": "1597.439",
+          "percentile": "0.650000000000",
+          "totalCount": "1256",
+          "ofOnePercentile": "2.86"
+        },
+        {
+          "value": "1632.255",
+          "percentile": "0.700000000000",
+          "totalCount": "1353",
+          "ofOnePercentile": "3.33"
+        },
+        {
+          "value": "1671.167",
+          "percentile": "0.750000000000",
+          "totalCount": "1450",
+          "ofOnePercentile": "4.00"
+        },
+        {
+          "value": "1694.719",
+          "percentile": "0.775000000000",
+          "totalCount": "1499",
+          "ofOnePercentile": "4.44"
+        },
+        {
+          "value": "1716.223",
+          "percentile": "0.800000000000",
+          "totalCount": "1546",
+          "ofOnePercentile": "5.00"
+        },
+        {
+          "value": "1744.895",
+          "percentile": "0.825000000000",
+          "totalCount": "1595",
+          "ofOnePercentile": "5.71"
+        },
+        {
+          "value": "1773.567",
+          "percentile": "0.850000000000",
+          "totalCount": "1643",
+          "ofOnePercentile": "6.67"
+        },
+        {
+          "value": "1812.479",
+          "percentile": "0.875000000000",
+          "totalCount": "1691",
+          "ofOnePercentile": "8.00"
+        },
+        {
+          "value": "1833.983",
+          "percentile": "0.887500000000",
+          "totalCount": "1715",
+          "ofOnePercentile": "8.89"
+        },
+        {
+          "value": "1865.727",
+          "percentile": "0.900000000000",
+          "totalCount": "1740",
+          "ofOnePercentile": "10.00"
+        },
+        {
+          "value": "1895.423",
+          "percentile": "0.912500000000",
+          "totalCount": "1763",
+          "ofOnePercentile": "11.43"
+        },
+        {
+          "value": "1930.239",
+          "percentile": "0.925000000000",
+          "totalCount": "1789",
+          "ofOnePercentile": "13.33"
+        },
+        {
+          "value": "1968.127",
+          "percentile": "0.937500000000",
+          "totalCount": "1812",
+          "ofOnePercentile": "16.00"
+        },
+        {
+          "value": "1991.679",
+          "percentile": "0.943750000000",
+          "totalCount": "1824",
+          "ofOnePercentile": "17.78"
+        },
+        {
+          "value": "2019.327",
+          "percentile": "0.950000000000",
+          "totalCount": "1836",
+          "ofOnePercentile": "20.00"
+        },
+        {
+          "value": "2047.999",
+          "percentile": "0.956250000000",
+          "totalCount": "1849",
+          "ofOnePercentile": "22.86"
+        },
+        {
+          "value": "2095.103",
+          "percentile": "0.962500000000",
+          "totalCount": "1860",
+          "ofOnePercentile": "26.67"
+        },
+        {
+          "value": "2170.879",
+          "percentile": "0.968750000000",
+          "totalCount": "1872",
+          "ofOnePercentile": "32.00"
+        },
+        {
+          "value": "2209.791",
+          "percentile": "0.971875000000",
+          "totalCount": "1878",
+          "ofOnePercentile": "35.56"
+        },
+        {
+          "value": "2256.895",
+          "percentile": "0.975000000000",
+          "totalCount": "1885",
+          "ofOnePercentile": "40.00"
+        },
+        {
+          "value": "2303.999",
+          "percentile": "0.978125000000",
+          "totalCount": "1890",
+          "ofOnePercentile": "45.71"
+        },
+        {
+          "value": "2328.575",
+          "percentile": "0.981250000000",
+          "totalCount": "1896",
+          "ofOnePercentile": "53.33"
+        },
+        {
+          "value": "2365.439",
+          "percentile": "0.984375000000",
+          "totalCount": "1902",
+          "ofOnePercentile": "64.00"
+        },
+        {
+          "value": "2375.679",
+          "percentile": "0.985937500000",
+          "totalCount": "1905",
+          "ofOnePercentile": "71.11"
+        },
+        {
+          "value": "2394.111",
+          "percentile": "0.987500000000",
+          "totalCount": "1909",
+          "ofOnePercentile": "80.00"
+        },
+        {
+          "value": "2408.447",
+          "percentile": "0.989062500000",
+          "totalCount": "1911",
+          "ofOnePercentile": "91.43"
+        },
+        {
+          "value": "2424.831",
+          "percentile": "0.990625000000",
+          "totalCount": "1914",
+          "ofOnePercentile": "106.67"
+        },
+        {
+          "value": "2437.119",
+          "percentile": "0.992187500000",
+          "totalCount": "1918",
+          "ofOnePercentile": "128.00"
+        },
+        {
+          "value": "2443.263",
+          "percentile": "0.992968750000",
+          "totalCount": "1919",
+          "ofOnePercentile": "142.22"
+        },
+        {
+          "value": "2447.359",
+          "percentile": "0.993750000000",
+          "totalCount": "1920",
+          "ofOnePercentile": "160.00"
+        },
+        {
+          "value": "2469.887",
+          "percentile": "0.994531250000",
+          "totalCount": "1922",
+          "ofOnePercentile": "182.86"
+        },
+        {
+          "value": "2490.367",
+          "percentile": "0.995312500000",
+          "totalCount": "1923",
+          "ofOnePercentile": "213.33"
+        },
+        {
+          "value": "2590.719",
+          "percentile": "0.996093750000",
+          "totalCount": "1925",
+          "ofOnePercentile": "256.00"
+        },
+        {
+          "value": "2609.151",
+          "percentile": "0.996484375000",
+          "totalCount": "1926",
+          "ofOnePercentile": "284.44"
+        },
+        {
+          "value": "2609.151",
+          "percentile": "0.996875000000",
+          "totalCount": "1926",
+          "ofOnePercentile": "320.00"
+        },
+        {
+          "value": "2621.439",
+          "percentile": "0.997265625000",
+          "totalCount": "1927",
+          "ofOnePercentile": "365.71"
+        },
+        {
+          "value": "2629.631",
+          "percentile": "0.997656250000",
+          "totalCount": "1928",
+          "ofOnePercentile": "426.67"
+        },
+        {
+          "value": "2631.679",
+          "percentile": "0.998046875000",
+          "totalCount": "1929",
+          "ofOnePercentile": "512.00"
+        },
+        {
+          "value": "2631.679",
+          "percentile": "0.998242187500",
+          "totalCount": "1929",
+          "ofOnePercentile": "568.89"
+        },
+        {
+          "value": "2631.679",
+          "percentile": "0.998437500000",
+          "totalCount": "1929",
+          "ofOnePercentile": "640.00"
+        },
+        {
+          "value": "2781.183",
+          "percentile": "0.998632812500",
+          "totalCount": "1930",
+          "ofOnePercentile": "731.43"
+        },
+        {
+          "value": "2781.183",
+          "percentile": "0.998828125000",
+          "totalCount": "1930",
+          "ofOnePercentile": "853.33"
+        },
+        {
+          "value": "2789.375",
+          "percentile": "0.999023437500",
+          "totalCount": "1931",
+          "ofOnePercentile": "1024.00"
+        },
+        {
+          "value": "2789.375",
+          "percentile": "0.999121093750",
+          "totalCount": "1931",
+          "ofOnePercentile": "1137.78"
+        },
+        {
+          "value": "2789.375",
+          "percentile": "0.999218750000",
+          "totalCount": "1931",
+          "ofOnePercentile": "1280.00"
+        },
+        {
+          "value": "2789.375",
+          "percentile": "0.999316406250",
+          "totalCount": "1931",
+          "ofOnePercentile": "1462.86"
+        },
+        {
+          "value": "2789.375",
+          "percentile": "0.999414062500",
+          "totalCount": "1931",
+          "ofOnePercentile": "1706.67"
+        },
+        {
+          "value": "2920.447",
+          "percentile": "0.999511718750",
+          "totalCount": "1932",
+          "ofOnePercentile": "2048.00"
+        }
+      ]
+    }
+  },
+  {
+    "name": "AlbumsTracksGenreSome-k6-60s-max-requests",
+    "time": {
+      "start": "2022-01-16T18:41:19.514Z",
+      "end": "2022-01-16T18:42:21.118Z"
+    },
+    "requests": {
+      "count": 6520,
+      "average": 107.8325088201374
+    },
+    "response": {
+      "totalBytes": 28974880,
+      "bytesPerSecond": 479207.6691966906
+    },
+    "histogram": {
+      "json": {
+        "p50": 461,
+        "p75": 482,
+        "p90": 500,
+        "p97_5": 523,
+        "p99": 535,
+        "p99_9": 560,
+        "p99_99": 648,
+        "p99_999": 648,
+        "max": 648.475668,
+        "totalCount": 6520,
+        "mean": 461.4869202453988,
+        "min": 183.791,
+        "stdDeviation": 33.5485077189963
+      },
+      "parsedStats": [
+        {
+          "value": "183.807",
+          "percentile": "0.000000000000",
+          "totalCount": "1",
+          "ofOnePercentile": "1.00"
+        },
+        {
+          "value": "425.983",
+          "percentile": "0.100000000000",
+          "totalCount": "652",
+          "ofOnePercentile": "1.11"
+        },
+        {
+          "value": "436.479",
+          "percentile": "0.200000000000",
+          "totalCount": "1316",
+          "ofOnePercentile": "1.25"
+        },
+        {
+          "value": "445.951",
+          "percentile": "0.300000000000",
+          "totalCount": "1967",
+          "ofOnePercentile": "1.43"
+        },
+        {
+          "value": "453.631",
+          "percentile": "0.400000000000",
+          "totalCount": "2626",
+          "ofOnePercentile": "1.67"
+        },
+        {
+          "value": "461.311",
+          "percentile": "0.500000000000",
+          "totalCount": "3275",
+          "ofOnePercentile": "2.00"
+        },
+        {
+          "value": "465.151",
+          "percentile": "0.550000000000",
+          "totalCount": "3590",
+          "ofOnePercentile": "2.22"
+        },
+        {
+          "value": "469.503",
+          "percentile": "0.600000000000",
+          "totalCount": "3941",
+          "ofOnePercentile": "2.50"
+        },
+        {
+          "value": "473.599",
+          "percentile": "0.650000000000",
+          "totalCount": "4244",
+          "ofOnePercentile": "2.86"
+        },
+        {
+          "value": "477.695",
+          "percentile": "0.700000000000",
+          "totalCount": "4564",
+          "ofOnePercentile": "3.33"
+        },
+        {
+          "value": "482.047",
+          "percentile": "0.750000000000",
+          "totalCount": "4898",
+          "ofOnePercentile": "4.00"
+        },
+        {
+          "value": "484.351",
+          "percentile": "0.775000000000",
+          "totalCount": "5061",
+          "ofOnePercentile": "4.44"
+        },
+        {
+          "value": "486.911",
+          "percentile": "0.800000000000",
+          "totalCount": "5225",
+          "ofOnePercentile": "5.00"
+        },
+        {
+          "value": "490.239",
+          "percentile": "0.825000000000",
+          "totalCount": "5381",
+          "ofOnePercentile": "5.71"
+        },
+        {
+          "value": "493.055",
+          "percentile": "0.850000000000",
+          "totalCount": "5544",
+          "ofOnePercentile": "6.67"
+        },
+        {
+          "value": "496.383",
+          "percentile": "0.875000000000",
+          "totalCount": "5706",
+          "ofOnePercentile": "8.00"
+        },
+        {
+          "value": "498.431",
+          "percentile": "0.887500000000",
+          "totalCount": "5791",
+          "ofOnePercentile": "8.89"
+        },
+        {
+          "value": "500.735",
+          "percentile": "0.900000000000",
+          "totalCount": "5875",
+          "ofOnePercentile": "10.00"
+        },
+        {
+          "value": "503.039",
+          "percentile": "0.912500000000",
+          "totalCount": "5953",
+          "ofOnePercentile": "11.43"
+        },
+        {
+          "value": "506.111",
+          "percentile": "0.925000000000",
+          "totalCount": "6033",
+          "ofOnePercentile": "13.33"
+        },
+        {
+          "value": "508.927",
+          "percentile": "0.937500000000",
+          "totalCount": "6115",
+          "ofOnePercentile": "16.00"
+        },
+        {
+          "value": "510.463",
+          "percentile": "0.943750000000",
+          "totalCount": "6160",
+          "ofOnePercentile": "17.78"
+        },
+        {
+          "value": "512.255",
+          "percentile": "0.950000000000",
+          "totalCount": "6202",
+          "ofOnePercentile": "20.00"
+        },
+        {
+          "value": "514.303",
+          "percentile": "0.956250000000",
+          "totalCount": "6235",
+          "ofOnePercentile": "22.86"
+        },
+        {
+          "value": "517.375",
+          "percentile": "0.962500000000",
+          "totalCount": "6278",
+          "ofOnePercentile": "26.67"
+        },
+        {
+          "value": "519.679",
+          "percentile": "0.968750000000",
+          "totalCount": "6317",
+          "ofOnePercentile": "32.00"
+        },
+        {
+          "value": "522.239",
+          "percentile": "0.971875000000",
+          "totalCount": "6340",
+          "ofOnePercentile": "35.56"
+        },
+        {
+          "value": "523.775",
+          "percentile": "0.975000000000",
+          "totalCount": "6357",
+          "ofOnePercentile": "40.00"
+        },
+        {
+          "value": "525.823",
+          "percentile": "0.978125000000",
+          "totalCount": "6378",
+          "ofOnePercentile": "45.71"
+        },
+        {
+          "value": "527.871",
+          "percentile": "0.981250000000",
+          "totalCount": "6399",
+          "ofOnePercentile": "53.33"
+        },
+        {
+          "value": "529.919",
+          "percentile": "0.984375000000",
+          "totalCount": "6422",
+          "ofOnePercentile": "64.00"
+        },
+        {
+          "value": "530.431",
+          "percentile": "0.985937500000",
+          "totalCount": "6429",
+          "ofOnePercentile": "71.11"
+        },
+        {
+          "value": "531.967",
+          "percentile": "0.987500000000",
+          "totalCount": "6441",
+          "ofOnePercentile": "80.00"
+        },
+        {
+          "value": "533.503",
+          "percentile": "0.989062500000",
+          "totalCount": "6449",
+          "ofOnePercentile": "91.43"
+        },
+        {
+          "value": "536.063",
+          "percentile": "0.990625000000",
+          "totalCount": "6459",
+          "ofOnePercentile": "106.67"
+        },
+        {
+          "value": "540.159",
+          "percentile": "0.992187500000",
+          "totalCount": "6470",
+          "ofOnePercentile": "128.00"
+        },
+        {
+          "value": "542.207",
+          "percentile": "0.992968750000",
+          "totalCount": "6475",
+          "ofOnePercentile": "142.22"
+        },
+        {
+          "value": "544.767",
+          "percentile": "0.993750000000",
+          "totalCount": "6480",
+          "ofOnePercentile": "160.00"
+        },
+        {
+          "value": "546.815",
+          "percentile": "0.994531250000",
+          "totalCount": "6485",
+          "ofOnePercentile": "182.86"
+        },
+        {
+          "value": "548.863",
+          "percentile": "0.995312500000",
+          "totalCount": "6491",
+          "ofOnePercentile": "213.33"
+        },
+        {
+          "value": "549.375",
+          "percentile": "0.996093750000",
+          "totalCount": "6495",
+          "ofOnePercentile": "256.00"
+        },
+        {
+          "value": "550.911",
+          "percentile": "0.996484375000",
+          "totalCount": "6498",
+          "ofOnePercentile": "284.44"
+        },
+        {
+          "value": "552.447",
+          "percentile": "0.996875000000",
+          "totalCount": "6500",
+          "ofOnePercentile": "320.00"
+        },
+        {
+          "value": "554.495",
+          "percentile": "0.997265625000",
+          "totalCount": "6503",
+          "ofOnePercentile": "365.71"
+        },
+        {
+          "value": "555.007",
+          "percentile": "0.997656250000",
+          "totalCount": "6505",
+          "ofOnePercentile": "426.67"
+        },
+        {
+          "value": "558.079",
+          "percentile": "0.998046875000",
+          "totalCount": "6508",
+          "ofOnePercentile": "512.00"
+        },
+        {
+          "value": "558.591",
+          "percentile": "0.998242187500",
+          "totalCount": "6509",
+          "ofOnePercentile": "568.89"
+        },
+        {
+          "value": "559.615",
+          "percentile": "0.998437500000",
+          "totalCount": "6511",
+          "ofOnePercentile": "640.00"
+        },
+        {
+          "value": "560.127",
+          "percentile": "0.998632812500",
+          "totalCount": "6515",
+          "ofOnePercentile": "731.43"
+        },
+        {
+          "value": "560.127",
+          "percentile": "0.998828125000",
+          "totalCount": "6515",
+          "ofOnePercentile": "853.33"
+        },
+        {
+          "value": "560.127",
+          "percentile": "0.999023437500",
+          "totalCount": "6515",
+          "ofOnePercentile": "1024.00"
+        },
+        {
+          "value": "560.127",
+          "percentile": "0.999121093750",
+          "totalCount": "6515",
+          "ofOnePercentile": "1137.78"
+        },
+        {
+          "value": "560.127",
+          "percentile": "0.999218750000",
+          "totalCount": "6515",
+          "ofOnePercentile": "1280.00"
+        },
+        {
+          "value": "561.663",
+          "percentile": "0.999316406250",
+          "totalCount": "6516",
+          "ofOnePercentile": "1462.86"
+        },
+        {
+          "value": "562.175",
+          "percentile": "0.999414062500",
+          "totalCount": "6517",
+          "ofOnePercentile": "1706.67"
+        },
+        {
+          "value": "562.175",
+          "percentile": "0.999511718750",
+          "totalCount": "6517",
+          "ofOnePercentile": "2048.00"
+        },
+        {
+          "value": "563.711",
+          "percentile": "0.999560546875",
+          "totalCount": "6518",
+          "ofOnePercentile": "2275.56"
+        },
+        {
+          "value": "563.711",
+          "percentile": "0.999609375000",
+          "totalCount": "6518",
+          "ofOnePercentile": "2560.00"
+        },
+        {
+          "value": "563.711",
+          "percentile": "0.999658203125",
+          "totalCount": "6518",
+          "ofOnePercentile": "2925.71"
+        },
+        {
+          "value": "600.575",
+          "percentile": "0.999707031250",
+          "totalCount": "6519",
+          "ofOnePercentile": "3413.33"
+        },
+        {
+          "value": "600.575",
+          "percentile": "0.999755859375",
+          "totalCount": "6519",
+          "ofOnePercentile": "4096.00"
+        },
+        {
+          "value": "600.575",
+          "percentile": "0.999780273438",
+          "totalCount": "6519",
+          "ofOnePercentile": "4551.11"
+        },
+        {
+          "value": "600.575",
+          "percentile": "0.999804687500",
+          "totalCount": "6519",
+          "ofOnePercentile": "5120.00"
+        },
+        {
+          "value": "600.575",
+          "percentile": "0.999829101563",
+          "totalCount": "6519",
+          "ofOnePercentile": "5851.43"
+        },
+        {
+          "value": "648.703",
+          "percentile": "0.999853515625",
+          "totalCount": "6520",
+          "ofOnePercentile": "6826.67"
+        }
+      ]
+    }
+  },
+  {
+    "name": "TracksMediaAll-k6-60s-max-requests",
+    "time": {
+      "start": "2022-01-16T18:42:21.494Z",
+      "end": "2022-01-16T18:43:23.733Z"
+    },
+    "requests": {
+      "count": 2635,
+      "average": 43.20179599131942
+    },
+    "response": {
+      "totalBytes": 951661870,
+      "bytesPerSecond": 15602847.043816905
+    },
+    "histogram": {
+      "json": {
+        "p50": 1060,
+        "p75": 1180,
+        "p90": 1400,
+        "p97_5": 2020,
+        "p99": 2240,
+        "p99_9": 2860,
+        "p99_99": 3200,
+        "p99_999": 3200,
+        "max": 3204.779489,
+        "totalCount": 2635,
+        "mean": 1144.737760910816,
+        "min": 699.215,
+        "stdDeviation": 279.2629061142259
+      },
+      "parsedStats": [
+        {
+          "value": "699.391",
+          "percentile": "0.000000000000",
+          "totalCount": "1",
+          "ofOnePercentile": "1.00"
+        },
+        {
+          "value": "934.911",
+          "percentile": "0.100000000000",
+          "totalCount": "265",
+          "ofOnePercentile": "1.11"
+        },
+        {
+          "value": "970.239",
+          "percentile": "0.200000000000",
+          "totalCount": "528",
+          "ofOnePercentile": "1.25"
+        },
+        {
+          "value": "1002.495",
+          "percentile": "0.300000000000",
+          "totalCount": "791",
+          "ofOnePercentile": "1.43"
+        },
+        {
+          "value": "1033.727",
+          "percentile": "0.400000000000",
+          "totalCount": "1055",
+          "ofOnePercentile": "1.67"
+        },
+        {
+          "value": "1067.007",
+          "percentile": "0.500000000000",
+          "totalCount": "1321",
+          "ofOnePercentile": "2.00"
+        },
+        {
+          "value": "1086.463",
+          "percentile": "0.550000000000",
+          "totalCount": "1452",
+          "ofOnePercentile": "2.22"
+        },
+        {
+          "value": "1107.967",
+          "percentile": "0.600000000000",
+          "totalCount": "1591",
+          "ofOnePercentile": "2.50"
+        },
+        {
+          "value": "1130.495",
+          "percentile": "0.650000000000",
+          "totalCount": "1717",
+          "ofOnePercentile": "2.86"
+        },
+        {
+          "value": "1155.071",
+          "percentile": "0.700000000000",
+          "totalCount": "1848",
+          "ofOnePercentile": "3.33"
+        },
+        {
+          "value": "1185.791",
+          "percentile": "0.750000000000",
+          "totalCount": "1977",
+          "ofOnePercentile": "4.00"
+        },
+        {
+          "value": "1204.223",
+          "percentile": "0.775000000000",
+          "totalCount": "2045",
+          "ofOnePercentile": "4.44"
+        },
+        {
+          "value": "1223.679",
+          "percentile": "0.800000000000",
+          "totalCount": "2108",
+          "ofOnePercentile": "5.00"
+        },
+        {
+          "value": "1250.303",
+          "percentile": "0.825000000000",
+          "totalCount": "2175",
+          "ofOnePercentile": "5.71"
+        },
+        {
+          "value": "1285.119",
+          "percentile": "0.850000000000",
+          "totalCount": "2244",
+          "ofOnePercentile": "6.67"
+        },
+        {
+          "value": "1321.983",
+          "percentile": "0.875000000000",
+          "totalCount": "2306",
+          "ofOnePercentile": "8.00"
+        },
+        {
+          "value": "1359.871",
+          "percentile": "0.887500000000",
+          "totalCount": "2341",
+          "ofOnePercentile": "8.89"
+        },
+        {
+          "value": "1401.855",
+          "percentile": "0.900000000000",
+          "totalCount": "2372",
+          "ofOnePercentile": "10.00"
+        },
+        {
+          "value": "1492.991",
+          "percentile": "0.912500000000",
+          "totalCount": "2406",
+          "ofOnePercentile": "11.43"
+        },
+        {
+          "value": "1601.535",
+          "percentile": "0.925000000000",
+          "totalCount": "2439",
+          "ofOnePercentile": "13.33"
+        },
+        {
+          "value": "1693.695",
+          "percentile": "0.937500000000",
+          "totalCount": "2471",
+          "ofOnePercentile": "16.00"
+        },
+        {
+          "value": "1739.775",
+          "percentile": "0.943750000000",
+          "totalCount": "2487",
+          "ofOnePercentile": "17.78"
+        },
+        {
+          "value": "1808.383",
+          "percentile": "0.950000000000",
+          "totalCount": "2504",
+          "ofOnePercentile": "20.00"
+        },
+        {
+          "value": "1854.463",
+          "percentile": "0.956250000000",
+          "totalCount": "2522",
+          "ofOnePercentile": "22.86"
+        },
+        {
+          "value": "1908.735",
+          "percentile": "0.962500000000",
+          "totalCount": "2537",
+          "ofOnePercentile": "26.67"
+        },
+        {
+          "value": "1938.431",
+          "percentile": "0.968750000000",
+          "totalCount": "2553",
+          "ofOnePercentile": "32.00"
+        },
+        {
+          "value": "1982.463",
+          "percentile": "0.971875000000",
+          "totalCount": "2561",
+          "ofOnePercentile": "35.56"
+        },
+        {
+          "value": "2024.447",
+          "percentile": "0.975000000000",
+          "totalCount": "2570",
+          "ofOnePercentile": "40.00"
+        },
+        {
+          "value": "2049.023",
+          "percentile": "0.978125000000",
+          "totalCount": "2578",
+          "ofOnePercentile": "45.71"
+        },
+        {
+          "value": "2111.487",
+          "percentile": "0.981250000000",
+          "totalCount": "2586",
+          "ofOnePercentile": "53.33"
+        },
+        {
+          "value": "2177.023",
+          "percentile": "0.984375000000",
+          "totalCount": "2594",
+          "ofOnePercentile": "64.00"
+        },
+        {
+          "value": "2189.311",
+          "percentile": "0.985937500000",
+          "totalCount": "2598",
+          "ofOnePercentile": "71.11"
+        },
+        {
+          "value": "2232.319",
+          "percentile": "0.987500000000",
+          "totalCount": "2603",
+          "ofOnePercentile": "80.00"
+        },
+        {
+          "value": "2244.607",
+          "percentile": "0.989062500000",
+          "totalCount": "2607",
+          "ofOnePercentile": "91.43"
+        },
+        {
+          "value": "2279.423",
+          "percentile": "0.990625000000",
+          "totalCount": "2611",
+          "ofOnePercentile": "106.67"
+        },
+        {
+          "value": "2291.711",
+          "percentile": "0.992187500000",
+          "totalCount": "2615",
+          "ofOnePercentile": "128.00"
+        },
+        {
+          "value": "2373.631",
+          "percentile": "0.992968750000",
+          "totalCount": "2617",
+          "ofOnePercentile": "142.22"
+        },
+        {
+          "value": "2439.167",
+          "percentile": "0.993750000000",
+          "totalCount": "2619",
+          "ofOnePercentile": "160.00"
+        },
+        {
+          "value": "2467.839",
+          "percentile": "0.994531250000",
+          "totalCount": "2621",
+          "ofOnePercentile": "182.86"
+        },
+        {
+          "value": "2510.847",
+          "percentile": "0.995312500000",
+          "totalCount": "2624",
+          "ofOnePercentile": "213.33"
+        },
+        {
+          "value": "2514.943",
+          "percentile": "0.996093750000",
+          "totalCount": "2625",
+          "ofOnePercentile": "256.00"
+        },
+        {
+          "value": "2572.287",
+          "percentile": "0.996484375000",
+          "totalCount": "2626",
+          "ofOnePercentile": "284.44"
+        },
+        {
+          "value": "2643.967",
+          "percentile": "0.996875000000",
+          "totalCount": "2627",
+          "ofOnePercentile": "320.00"
+        },
+        {
+          "value": "2668.543",
+          "percentile": "0.997265625000",
+          "totalCount": "2628",
+          "ofOnePercentile": "365.71"
+        },
+        {
+          "value": "2758.655",
+          "percentile": "0.997656250000",
+          "totalCount": "2629",
+          "ofOnePercentile": "426.67"
+        },
+        {
+          "value": "2781.183",
+          "percentile": "0.998046875000",
+          "totalCount": "2630",
+          "ofOnePercentile": "512.00"
+        },
+        {
+          "value": "2836.479",
+          "percentile": "0.998242187500",
+          "totalCount": "2631",
+          "ofOnePercentile": "568.89"
+        },
+        {
+          "value": "2836.479",
+          "percentile": "0.998437500000",
+          "totalCount": "2631",
+          "ofOnePercentile": "640.00"
+        },
+        {
+          "value": "2859.007",
+          "percentile": "0.998632812500",
+          "totalCount": "2632",
+          "ofOnePercentile": "731.43"
+        },
+        {
+          "value": "2859.007",
+          "percentile": "0.998828125000",
+          "totalCount": "2632",
+          "ofOnePercentile": "853.33"
+        },
+        {
+          "value": "2865.151",
+          "percentile": "0.999023437500",
+          "totalCount": "2633",
+          "ofOnePercentile": "1024.00"
+        },
+        {
+          "value": "2865.151",
+          "percentile": "0.999121093750",
+          "totalCount": "2633",
+          "ofOnePercentile": "1137.78"
+        },
+        {
+          "value": "2865.151",
+          "percentile": "0.999218750000",
+          "totalCount": "2633",
+          "ofOnePercentile": "1280.00"
+        },
+        {
+          "value": "2998.271",
+          "percentile": "0.999316406250",
+          "totalCount": "2634",
+          "ofOnePercentile": "1462.86"
+        },
+        {
+          "value": "2998.271",
+          "percentile": "0.999414062500",
+          "totalCount": "2634",
+          "ofOnePercentile": "1706.67"
+        },
+        {
+          "value": "2998.271",
+          "percentile": "0.999511718750",
+          "totalCount": "2634",
+          "ofOnePercentile": "2048.00"
+        },
+        {
+          "value": "2998.271",
+          "percentile": "0.999560546875",
+          "totalCount": "2634",
+          "ofOnePercentile": "2275.56"
+        },
+        {
+          "value": "2998.271",
+          "percentile": "0.999609375000",
+          "totalCount": "2634",
+          "ofOnePercentile": "2560.00"
+        },
+        {
+          "value": "3205.119",
+          "percentile": "0.999658203125",
+          "totalCount": "2635",
+          "ofOnePercentile": "2925.71"
+        }
+      ]
+    }
+  },
+  {
+    "name": "ArtistByArtistId-k6-60s-max-requests",
+    "time": {
+      "start": "2022-01-16T18:43:23.961Z",
+      "end": "2022-01-16T18:44:25.608Z"
+    },
+    "requests": {
+      "count": 6671,
+      "average": 110.37719592955632
+    },
+    "response": {
+      "totalBytes": 1060689,
+      "bytesPerSecond": 17549.974152799456
+    },
+    "histogram": {
+      "json": {
+        "p50": 452,
+        "p75": 473,
+        "p90": 505,
+        "p97_5": 526,
+        "p99": 532,
+        "p99_9": 542,
+        "p99_99": 550,
+        "p99_999": 550,
+        "max": 550.439857,
+        "totalCount": 6671,
+        "mean": 451.097346724629,
+        "min": 177.907,
+        "stdDeviation": 41.08994409334864
+      },
+      "parsedStats": [
+        {
+          "value": "177.919",
+          "percentile": "0.000000000000",
+          "totalCount": "1",
+          "ofOnePercentile": "1.00"
+        },
+        {
+          "value": "398.335",
+          "percentile": "0.100000000000",
+          "totalCount": "668",
+          "ofOnePercentile": "1.11"
+        },
+        {
+          "value": "423.935",
+          "percentile": "0.200000000000",
+          "totalCount": "1337",
+          "ofOnePercentile": "1.25"
+        },
+        {
+          "value": "435.199",
+          "percentile": "0.300000000000",
+          "totalCount": "2003",
+          "ofOnePercentile": "1.43"
+        },
+        {
+          "value": "444.415",
+          "percentile": "0.400000000000",
+          "totalCount": "2695",
+          "ofOnePercentile": "1.67"
+        },
+        {
+          "value": "452.607",
+          "percentile": "0.500000000000",
+          "totalCount": "3350",
+          "ofOnePercentile": "2.00"
+        },
+        {
+          "value": "456.703",
+          "percentile": "0.550000000000",
+          "totalCount": "3698",
+          "ofOnePercentile": "2.22"
+        },
+        {
+          "value": "460.543",
+          "percentile": "0.600000000000",
+          "totalCount": "4008",
+          "ofOnePercentile": "2.50"
+        },
+        {
+          "value": "464.639",
+          "percentile": "0.650000000000",
+          "totalCount": "4340",
+          "ofOnePercentile": "2.86"
+        },
+        {
+          "value": "468.735",
+          "percentile": "0.700000000000",
+          "totalCount": "4687",
+          "ofOnePercentile": "3.33"
+        },
+        {
+          "value": "473.855",
+          "percentile": "0.750000000000",
+          "totalCount": "5007",
+          "ofOnePercentile": "4.00"
+        },
+        {
+          "value": "477.439",
+          "percentile": "0.775000000000",
+          "totalCount": "5188",
+          "ofOnePercentile": "4.44"
+        },
+        {
+          "value": "481.023",
+          "percentile": "0.800000000000",
+          "totalCount": "5345",
+          "ofOnePercentile": "5.00"
+        },
+        {
+          "value": "485.119",
+          "percentile": "0.825000000000",
+          "totalCount": "5506",
+          "ofOnePercentile": "5.71"
+        },
+        {
+          "value": "490.495",
+          "percentile": "0.850000000000",
+          "totalCount": "5671",
+          "ofOnePercentile": "6.67"
+        },
+        {
+          "value": "497.663",
+          "percentile": "0.875000000000",
+          "totalCount": "5845",
+          "ofOnePercentile": "8.00"
+        },
+        {
+          "value": "501.759",
+          "percentile": "0.887500000000",
+          "totalCount": "5926",
+          "ofOnePercentile": "8.89"
+        },
+        {
+          "value": "505.855",
+          "percentile": "0.900000000000",
+          "totalCount": "6005",
+          "ofOnePercentile": "10.00"
+        },
+        {
+          "value": "510.719",
+          "percentile": "0.912500000000",
+          "totalCount": "6089",
+          "ofOnePercentile": "11.43"
+        },
+        {
+          "value": "514.047",
+          "percentile": "0.925000000000",
+          "totalCount": "6175",
+          "ofOnePercentile": "13.33"
+        },
+        {
+          "value": "517.887",
+          "percentile": "0.937500000000",
+          "totalCount": "6255",
+          "ofOnePercentile": "16.00"
+        },
+        {
+          "value": "519.423",
+          "percentile": "0.943750000000",
+          "totalCount": "6296",
+          "ofOnePercentile": "17.78"
+        },
+        {
+          "value": "520.703",
+          "percentile": "0.950000000000",
+          "totalCount": "6348",
+          "ofOnePercentile": "20.00"
+        },
+        {
+          "value": "521.471",
+          "percentile": "0.956250000000",
+          "totalCount": "6386",
+          "ofOnePercentile": "22.86"
+        },
+        {
+          "value": "522.495",
+          "percentile": "0.962500000000",
+          "totalCount": "6431",
+          "ofOnePercentile": "26.67"
+        },
+        {
+          "value": "523.775",
+          "percentile": "0.968750000000",
+          "totalCount": "6468",
+          "ofOnePercentile": "32.00"
+        },
+        {
+          "value": "525.311",
+          "percentile": "0.971875000000",
+          "totalCount": "6487",
+          "ofOnePercentile": "35.56"
+        },
+        {
+          "value": "526.335",
+          "percentile": "0.975000000000",
+          "totalCount": "6510",
+          "ofOnePercentile": "40.00"
+        },
+        {
+          "value": "527.359",
+          "percentile": "0.978125000000",
+          "totalCount": "6531",
+          "ofOnePercentile": "45.71"
+        },
+        {
+          "value": "528.895",
+          "percentile": "0.981250000000",
+          "totalCount": "6555",
+          "ofOnePercentile": "53.33"
+        },
+        {
+          "value": "529.919",
+          "percentile": "0.984375000000",
+          "totalCount": "6573",
+          "ofOnePercentile": "64.00"
+        },
+        {
+          "value": "530.431",
+          "percentile": "0.985937500000",
+          "totalCount": "6585",
+          "ofOnePercentile": "71.11"
+        },
+        {
+          "value": "530.943",
+          "percentile": "0.987500000000",
+          "totalCount": "6591",
+          "ofOnePercentile": "80.00"
+        },
+        {
+          "value": "531.967",
+          "percentile": "0.989062500000",
+          "totalCount": "6600",
+          "ofOnePercentile": "91.43"
+        },
+        {
+          "value": "532.991",
+          "percentile": "0.990625000000",
+          "totalCount": "6611",
+          "ofOnePercentile": "106.67"
+        },
+        {
+          "value": "533.503",
+          "percentile": "0.992187500000",
+          "totalCount": "6621",
+          "ofOnePercentile": "128.00"
+        },
+        {
+          "value": "534.015",
+          "percentile": "0.992968750000",
+          "totalCount": "6627",
+          "ofOnePercentile": "142.22"
+        },
+        {
+          "value": "534.527",
+          "percentile": "0.993750000000",
+          "totalCount": "6634",
+          "ofOnePercentile": "160.00"
+        },
+        {
+          "value": "535.039",
+          "percentile": "0.994531250000",
+          "totalCount": "6638",
+          "ofOnePercentile": "182.86"
+        },
+        {
+          "value": "535.551",
+          "percentile": "0.995312500000",
+          "totalCount": "6640",
+          "ofOnePercentile": "213.33"
+        },
+        {
+          "value": "536.575",
+          "percentile": "0.996093750000",
+          "totalCount": "6648",
+          "ofOnePercentile": "256.00"
+        },
+        {
+          "value": "536.575",
+          "percentile": "0.996484375000",
+          "totalCount": "6648",
+          "ofOnePercentile": "284.44"
+        },
+        {
+          "value": "537.599",
+          "percentile": "0.996875000000",
+          "totalCount": "6657",
+          "ofOnePercentile": "320.00"
+        },
+        {
+          "value": "537.599",
+          "percentile": "0.997265625000",
+          "totalCount": "6657",
+          "ofOnePercentile": "365.71"
+        },
+        {
+          "value": "537.599",
+          "percentile": "0.997656250000",
+          "totalCount": "6657",
+          "ofOnePercentile": "426.67"
+        },
+        {
+          "value": "538.111",
+          "percentile": "0.998046875000",
+          "totalCount": "6660",
+          "ofOnePercentile": "512.00"
+        },
+        {
+          "value": "538.111",
+          "percentile": "0.998242187500",
+          "totalCount": "6660",
+          "ofOnePercentile": "568.89"
+        },
+        {
+          "value": "538.623",
+          "percentile": "0.998437500000",
+          "totalCount": "6661",
+          "ofOnePercentile": "640.00"
+        },
+        {
+          "value": "539.647",
+          "percentile": "0.998632812500",
+          "totalCount": "6662",
+          "ofOnePercentile": "731.43"
+        },
+        {
+          "value": "542.207",
+          "percentile": "0.998828125000",
+          "totalCount": "6665",
+          "ofOnePercentile": "853.33"
+        },
+        {
+          "value": "542.207",
+          "percentile": "0.999023437500",
+          "totalCount": "6665",
+          "ofOnePercentile": "1024.00"
+        },
+        {
+          "value": "542.719",
+          "percentile": "0.999121093750",
+          "totalCount": "6666",
+          "ofOnePercentile": "1137.78"
+        },
+        {
+          "value": "542.719",
+          "percentile": "0.999218750000",
+          "totalCount": "6666",
+          "ofOnePercentile": "1280.00"
+        },
+        {
+          "value": "543.231",
+          "percentile": "0.999316406250",
+          "totalCount": "6667",
+          "ofOnePercentile": "1462.86"
+        },
+        {
+          "value": "545.791",
+          "percentile": "0.999414062500",
+          "totalCount": "6669",
+          "ofOnePercentile": "1706.67"
+        },
+        {
+          "value": "545.791",
+          "percentile": "0.999511718750",
+          "totalCount": "6669",
+          "ofOnePercentile": "2048.00"
+        },
+        {
+          "value": "545.791",
+          "percentile": "0.999560546875",
+          "totalCount": "6669",
+          "ofOnePercentile": "2275.56"
+        },
+        {
+          "value": "545.791",
+          "percentile": "0.999609375000",
+          "totalCount": "6669",
+          "ofOnePercentile": "2560.00"
+        },
+        {
+          "value": "545.791",
+          "percentile": "0.999658203125",
+          "totalCount": "6669",
+          "ofOnePercentile": "2925.71"
+        },
+        {
+          "value": "550.399",
+          "percentile": "0.999707031250",
+          "totalCount": "6670",
+          "ofOnePercentile": "3413.33"
+        },
+        {
+          "value": "550.399",
+          "percentile": "0.999755859375",
+          "totalCount": "6670",
+          "ofOnePercentile": "4096.00"
+        },
+        {
+          "value": "550.399",
+          "percentile": "0.999780273438",
+          "totalCount": "6670",
+          "ofOnePercentile": "4551.11"
+        },
+        {
+          "value": "550.399",
+          "percentile": "0.999804687500",
+          "totalCount": "6670",
+          "ofOnePercentile": "5120.00"
+        },
+        {
+          "value": "550.399",
+          "percentile": "0.999829101563",
+          "totalCount": "6670",
+          "ofOnePercentile": "5851.43"
+        },
+        {
+          "value": "550.911",
+          "percentile": "0.999853515625",
+          "totalCount": "6671",
+          "ofOnePercentile": "6826.67"
+        }
+      ]
+    }
+  }
+]
