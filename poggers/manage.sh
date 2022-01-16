@@ -10,9 +10,8 @@ usage() {
 
 init() {
 		docker build -t poggers git@github.com:EerikSaksi/poggers.git\#main: 
-		docker run --rm --name postgraphile-ssl-chinook -p 5000:5000  -e DATABASE_URL=$DATABASE_URL -e PORT=5000  postgraphile_ssl
+		docker run -d --name poggers-chinook --network=host -e DATABASE_URL=$DATABASE_URL -e SERVER_ADDR='127.0.0.1:7080' poggers
 }
-
 
 if [ "$#" -ne 1 ]; then
     usage
