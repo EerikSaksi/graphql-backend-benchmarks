@@ -8,7 +8,7 @@ usage() {
 }
 
 init () {
-	docker run --network=host --name hasura-chinook -e HASURA_GRAPHQL_DATABASE_URL="${DATABASE_URL}?ssl=true" -d hasura/graphql-engine:latest graphql-engine serve 
+	docker run --network=host --name hasura-chinook -e HASURA_GRAPHQL_DATABASE_URL="${DATABASE_URL}?ssl=true" -e HASURA_GRAPHQL_ENABLE_CONSOLE=true -d hasura/graphql-engine:latest graphql-engine serve 
 	sleep 10
 
 	#enable foreign key relations (just copied the curl)
