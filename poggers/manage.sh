@@ -11,7 +11,7 @@ usage() {
 init() {
     N_CPUS=$(nproc --all)
 		docker build -t poggers git@github.com:EerikSaksi/poggers.git\#main: 
-		docker run -d --name poggers-chinook -p 8080:8080 -e SERVER_ADDR=0.0.0.0:8080 -e PG.USER=admin -e PG.HOST=172.17.0.1 -e PG.PORT=7432 -e PG.DBNAME=chinook -e PG.POOL.MAX_SIZE=100 poggers 
+		docker run -d --name poggers-chinook -p 7080:7080 -e DATABASE_URL='postgres://admin@172.17.0.1:7432/chinook' -e SERVER_ADDR=0.0.0.0:7080 -e POOL_SIZE=100 poggers 
 }
 
 
