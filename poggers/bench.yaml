@@ -19,49 +19,49 @@ queries:
           }
         }
       }
-  - name: AlbumsTracksGenreSome
-    tools: [k6]
-    execution_strategy: MAX_REQUESTS_IN_DURATION
-    connections: 50
-    duration: 60s
-    query: |
-      query albums_tracks_genre_some {
-        albums(where: { artistId: 127 }) {
-          id
-          title
-          tracksByAlbumId {
-            id
-            name
-            genreByGenreId {
-              name
-            }
-          }
-        }
-      }
-  - name: TracksMediaAll
-    tools: [k6]
-    execution_strategy: MAX_REQUESTS_IN_DURATION
-    connections: 50
-    duration: 60s
-    query: |
-      query tracks_media_all {
-        tracks {
-          id
-          name
-          mediaTypeByMediaTypeId {
-            name
-          }
-        }
-      }
-  - name: ArtistByArtistId
-    tools: [k6]
-    execution_strategy: MAX_REQUESTS_IN_DURATION
-    connections: 50
-    duration: 60s
-    query: |
-      query artistByArtistId {
-        artists(where: { id: 3 }) {
-          id
-          name
-        }
-      }
+      #- name: AlbumsTracksGenreSome
+      #  tools: [k6]
+      #  execution_strategy: MAX_REQUESTS_IN_DURATION
+      #  connections: 50
+      #  duration: 60s
+      #  query: |
+      #    query albums_tracks_genre_some {
+      #      albums(where: { artistId: 127 }) {
+      #        id
+      #        title
+      #        tracksByAlbumId {
+      #          id
+      #          name
+      #          genreByGenreId {
+      #            name
+      #          }
+      #        }
+      #      }
+      #    }
+      #- name: TracksMediaAll
+      #  tools: [k6]
+      #  execution_strategy: MAX_REQUESTS_IN_DURATION
+      #  connections: 50
+      #  duration: 60s
+      #  query: |
+      #    query tracks_media_all {
+      #      tracks {
+      #        id
+      #        name
+      #        mediaTypeByMediaTypeId {
+      #          name
+      #        }
+      #      }
+      #    }
+      #- name: ArtistByArtistId
+      #  tools: [k6]
+      #  execution_strategy: MAX_REQUESTS_IN_DURATION
+      #  connections: 50
+      #  duration: 60s
+      #  query: |
+      #    query artistByArtistId {
+      #      artists(where: { id: 3 }) {
+      #        id
+      #        name
+      #      }
+      #    }

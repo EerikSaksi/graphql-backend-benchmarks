@@ -1,5 +1,8 @@
-url: 'http://127.0.0.1:7080/v1alpha1/graphql'
+url: 'http://127.0.0.1:8080/v1/graphql'
+headers: 
+  content-type: application/json
 queries:
+
   - name: AlbumsTracksGenreAll
     tools: [k6]
     execution_strategy: MAX_REQUESTS_IN_DURATION
@@ -17,51 +20,5 @@ queries:
               name
             }
           }
-        }
-      }
-  - name: AlbumsTracksGenreSome
-    tools: [k6]
-    execution_strategy: MAX_REQUESTS_IN_DURATION
-    connections: 50
-    duration: 60s
-    query: |
-      query {
-        albums (where: {artist_id: {_eq: 127}}){
-          id
-          title
-          tracks {
-            id
-            name
-            genre {
-              name
-            }
-          }
-        }
-      }
-  - name: TracksMediaAll
-    tools: [k6]
-    execution_strategy: MAX_REQUESTS_IN_DURATION
-    connections: 50
-    duration: 60s
-    query: |
-      query {
-        tracks {
-          id
-          name
-          media_type {
-            name
-          }
-        }
-      }
-  - name: ArtistByArtistId
-    tools: [k6]
-    execution_strategy: MAX_REQUESTS_IN_DURATION
-    connections: 50
-    duration: 60s
-    query: |
-      query {
-        artists(where: {id: 3}) {
-          id
-          name
         }
       }

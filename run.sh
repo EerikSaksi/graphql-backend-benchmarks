@@ -10,16 +10,15 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 
-docker kill $(docker ps -q)
-./poggers/manage.sh start
-sleep 5
-docker run --rm --net=host -v "$SCRIPT_DIR":/app/tmp -it \
-  graphql-bench-local:latest query \
-  --config="./tmp/poggers/bench.yaml" \
-  --outfile="./tmp/results/poggers_report.json"
+#docker kill $(docker ps -q)
+#./poggers/manage.sh start
+#sleep 5
+#docker run --rm --net=host -v "$SCRIPT_DIR":/app/tmp -it \
+#  graphql-bench-local:latest query \
+#  --config="./tmp/poggers/bench.yaml" \
+#  --outfile="./tmp/results/poggers_report.json"
 
 docker kill $(docker ps -q)
-
 ./hasura/manage.sh start
 sleep 5
 docker run --rm --net=host -v "$SCRIPT_DIR":/app/tmp -it \
@@ -29,12 +28,12 @@ docker run --rm --net=host -v "$SCRIPT_DIR":/app/tmp -it \
 ./hasura/manage.sh stop
 
 
-docker kill $(docker ps -q)
-./postgraphile/manage.sh start
-sleep 5
-docker run --rm --net=host -v "$SCRIPT_DIR":/app/tmp -it \
-  graphql-bench-local:latest query \
-  --config="./tmp/postgraphile/bench.yaml" \
-  --outfile="./tmp/results/postgraphile_report.json"
+#docker kill $(docker ps -q)
+#./postgraphile/manage.sh start
+#sleep 5
+#docker run --rm --net=host -v "$SCRIPT_DIR":/app/tmp -it \
+#  graphql-bench-local:latest query \
+#  --config="./tmp/postgraphile/bench.yaml" \
+#  --outfile="./tmp/results/postgraphile_report.json"
 
 python3 data_analysis.py

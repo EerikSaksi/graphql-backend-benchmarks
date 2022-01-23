@@ -10,7 +10,7 @@ usage() {
 init() {
     N_CPUS=$(nproc --all)
     docker build --no-cache -t "hasura/postgraphile:latest" "$SCRIPT_DIR"
-    docker run --name postgraphile-chinook -p 5000:5000 -d hasura/postgraphile:latest postgraphile -c 'postgres://admin@172.17.0.1:7432/chinook' --host 0.0.0.0 --max-pool-size 100 --cluster-workers "$n_cpus"
+    docker run --name postgraphile-chinook --network=host -d hasura/postgraphile:latest postgraphile -c 'postgres://admin@172.17.0.1:7432/chinook' --host 0.0.0.0 --max-pool-size 100 --cluster-workers "$n_cpus"
 }
 
 if [ "$#" -ne 1 ]; then
