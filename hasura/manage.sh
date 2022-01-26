@@ -20,7 +20,7 @@ init () {
     docker run --rm -v postgres-chinook:/var/lib/postgresql/data -e POSTGRES_USER=admin -e POSTGRES_DB=chinook hasuraci/postgres-init:d7cf835
 
     # start postgres
-    docker run -m 8192m --cpus=$CPUS --name  postgres-chinook -d -v postgres-chinook:/var/lib/postgresql/data -p 7432:5432 -e POSTGRES_USER=admin hasuraci/postgres-server:d7cf835
+    docker run -m 8192m --cpus=$DB_CPUS  --name  postgres-chinook -d -v postgres-chinook:/var/lib/postgresql/data -p 7432:5432 -e POSTGRES_USER=admin hasuraci/postgres-server:d7cf835
 
     # wait for postgres to come up
     sleep 5
@@ -37,7 +37,7 @@ init () {
     docker run --rm hasuraci/raven:de42ddb raven --host 172.17.0.1 -p 7432 -u admin -p '' -d chinook initialise
 
     # start raven
-    docker run -m 8192m --cpus=$CPUS --name raven-chinook -p 7080:8080 -d hasuraci/raven:de42ddb raven --host 172.17.0.1 -p 7432 -u admin -p '' -d chinook serve --connections 100
+    docker run --rm -m 8192m --cpus=$SERVER_CPUS --name raven-chinook -p 7080:8080 -d hasuraci/raven:de42ddb raven --host 172.17.0.1 -p 7432 -u admin -p '' -d chinook serve --connections 100
 
     # wait for raven to come up
     sleep 5
@@ -51,8 +51,9 @@ start () {
     docker start postgres-chinook
     # wait for postgres to come up
     sleep 5
-    # start raven
-    docker start raven-chinook
+
+    docker run --rm -m 8192m --cpus=$SERVER_CPUS --name raven-chinook -p 7080:8080 -d hasuraci/raven:de42ddb raven --host 172.17.0.1 -p 7432 -u admin -p '' -d chinook serve --connections 100
+		sleep 5
 }
 
 stop () {

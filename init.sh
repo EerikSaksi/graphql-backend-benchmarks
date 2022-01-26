@@ -1,7 +1,7 @@
 #!/bin/bash
+./hasura/manage.sh nuke
 ./hasura/manage.sh init
-./hasura/manage.sh stop
+./postgraphile/manage.sh nuke
 ./postgraphile/manage.sh init
-./postgraphile/manage.sh stop
+./poggers/manage.sh nuke
 ./poggers/manage.sh init
-./postgraphile/manage.sh stop

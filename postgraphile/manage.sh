@@ -8,10 +8,8 @@ usage() {
 }
 
 init() {
-    N_CPUS=$(nproc --all)
     docker build --no-cache -t "hasura/postgraphile:latest" "$SCRIPT_DIR"
-    docker run -m 8192m --cpus=$CPUS --name postgraphile-chinook -p 5000:5000 -d hasura/postgraphile:latest postgraphile -c 'postgres://admin@172.17.0.1:7432/chinook' --host 0.0.0.0 --max-pool-size 100 --cluster-workers "$n_cpus"
-}
+    }
 
 if [ "$#" -ne 1 ]; then
     usage
@@ -25,7 +23,8 @@ case $1 in
         ;;
     start)
         docker start postgres-chinook
-        docker start postgraphile-chinook
+				docker run --rm -m 8192m --cpus=$SERVER_CPUS --name postgraphile-chinook -p 5000:5000 -d hasura/postgraphile:latest postgraphile -c 'postgres://admin@172.17.0.1:7432/chinook' --host 0.0.0.0 --max-pool-size 100 --cluster-workers $SERVER_CPUS
+				sleep 10
         exit
         ;;
     stop)

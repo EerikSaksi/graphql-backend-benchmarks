@@ -10,31 +10,39 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 
-docker kill $(docker ps -q)
-./poggers/manage.sh start
-sleep 5
-docker run --rm --net=host -v "$SCRIPT_DIR":/app/tmp -it \
-  graphql-bench-local:latest query \
-  --config="./tmp/poggers/bench.yaml" \
-  --outfile="./tmp/results/poggers_report.json"
 
-docker kill $(docker ps -q)
+for i in {1..15};
+	do 
+		export DB_CPUS=$((i))
+		export SERVER_CPUS="$((16 - i))";
+		echo "$Server CPUs: ${SERVER_CPUS}, Database CPUs: ${DB_CPUS}"
+		docker kill $(docker ps -q)
+		./poggers/manage.sh start
+		sleep 5
+		docker run --rm --net=host -v "$SCRIPT_DIR":/app/tmp -it \
+			graphql-bench-local:latest query \
+			--config="./tmp/poggers/bench.yaml" \
+			--outfile="./tmp/results/poggers_report.json"
 
-./hasura/manage.sh start
-sleep 5
-docker run --rm --net=host -v "$SCRIPT_DIR":/app/tmp -it \
-  graphql-bench-local:latest query \
-  --config="./tmp/hasura/bench.yaml" \
-  --outfile="./tmp/results/hasura_report.json"
-./hasura/manage.sh stop
+		docker kill $(docker ps -q)
+
+		./hasura/manage.sh start
+		sleep 5
+		docker run --rm --net=host -v "$SCRIPT_DIR":/app/tmp -it \
+			graphql-bench-local:latest query \
+			--config="./tmp/hasura/bench.yaml" \
+			--outfile="./tmp/results/hasura_report.json"
+		./hasura/manage.sh stop
 
 
-docker kill $(docker ps -q)
-./postgraphile/manage.sh start
-sleep 5
-docker run --rm --net=host -v "$SCRIPT_DIR":/app/tmp -it \
-  graphql-bench-local:latest query \
-  --config="./tmp/postgraphile/bench.yaml" \
-  --outfile="./tmp/results/postgraphile_report.json"
+		docker kill $(docker ps -q)
+		./postgraphile/manage.sh start
+		sleep 5
+		docker run --rm --net=host -v "$SCRIPT_DIR":/app/tmp -it \
+			graphql-bench-local:latest query \
+			--config="./tmp/postgraphile/bench.yaml" \
+			--outfile="./tmp/results/postgraphile_report.json"
 
-python3 data_analysis.py
+		mkdir results/"${SERVER_CPUS}_server_cpus_${DB_CPUS}_db_cpus"
+		mv results/*json results/"${SERVER_CPUS}_server_cpus_${DB_CPUS}_db_cpus"
+done

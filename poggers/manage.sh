@@ -11,7 +11,6 @@ usage() {
 init() {
     N_CPUS=$(nproc --all)
 		docker build -t poggers git@github.com:EerikSaksi/poggers.git\#main: 
-		docker run -d -m 8192m --cpus=$CPUS --name poggers-chinook -p 8080:8080 -e DATABASE_URL='postgres://admin@172.17.0.1:7432/chinook' -e SERVER_ADDR=0.0.0.0:8080 -e POOL_SIZE=100 poggers 
 }
 
 
@@ -26,8 +25,9 @@ case $1 in
         exit
         ;;
     start)
-        docker start postgres-chinook 
-				docker start poggers-chinook
+				docker start postgres-chinook
+				docker run --rm -d -m 8192m --cpus=$SERVER_CPUS --name poggers-chinook -p 8080:8080 -e DATABASE_URL='postgres://admin@172.17.0.1:7432/chinook' -e SERVER_ADDR=0.0.0.0:8080 -e POOL_SIZE=100 poggers 
+				sleep 10
         exit
         ;;
     stop)
